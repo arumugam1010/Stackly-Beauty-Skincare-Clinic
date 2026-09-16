@@ -2916,6 +2916,76 @@ textarea.dash-control-input {
   }
 }
 
+/* ==========================================================================
+   Active Page Indicators (Mobile Navigation Drawer & Desktop Navigation)
+   ========================================================================== */
+
+/* Mobile Nav Drawer - Active Menu Item */
+.mobile-nav__content .main-menu__list > li.current {
+  background: rgba(54, 184, 158, 0.16) !important;
+  border-left: 4px solid #36B89E !important;
+  border-radius: 0 8px 8px 0 !important;
+  margin: 4px 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.mobile-nav__content .main-menu__list > li.current > a {
+  color: #36B89E !important;
+  font-weight: 700 !important;
+  padding-left: 14px !important;
+  letter-spacing: 0.3px !important;
+}
+
+/* Active indicator pill badge on mobile nav */
+.mobile-nav__content .main-menu__list > li.current > a::after {
+  content: "Active";
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px !important;
+  background: #36B89E !important;
+  color: #ffffff !important;
+  padding: 3px 9px !important;
+  border-radius: 20px !important;
+  margin-right: 12px !important;
+  box-shadow: 0 2px 8px rgba(54, 184, 158, 0.4) !important;
+  line-height: 1.2 !important;
+}
+
+/* Mobile sub-menu active item */
+.mobile-nav__content .main-menu__list > li > ul > li.current > a,
+.mobile-nav__content .main-menu__list > li > ul > li > ul > li.current > a {
+  color: #36B89E !important;
+  font-weight: 700 !important;
+  padding-left: 24px !important;
+}
+
+/* Hover effects for mobile nav links */
+.mobile-nav__content .main-menu__list > li > a:hover {
+  color: #36B89E !important;
+  padding-left: 8px !important;
+}
+
+/* Desktop Main Menu - Active Indicator Enhancement */
+.main-menu .main-menu__list > li.current > a,
+.stricky-header .main-menu__list > li.current > a {
+  color: #36B89E !important;
+  font-weight: 700 !important;
+  position: relative !important;
+}
+
+.main-menu .main-menu__list > li.current > a::before,
+.stricky-header .main-menu__list > li.current > a::before {
+  transform: scale(1, 1) !important;
+  background-color: #36B89E !important;
+  height: 3px !important;
+  border-radius: 2px !important;
+}
+
+
 
 
 

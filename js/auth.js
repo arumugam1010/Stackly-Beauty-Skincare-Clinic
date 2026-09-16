@@ -419,9 +419,52 @@
     onScroll();
   }
 
+  // Active Navigation Highlighter: Guarantees active page is prominently marked in mobile & desktop nav
+  function ensureActiveNavLinks() {
+    let path = window.location.pathname;
+    let fileName = path.substring(path.lastIndexOf('/') + 1);
+    if (!fileName || fileName === '' || fileName === '/') {
+      fileName = 'index.html';
+    }
+    fileName = fileName.split('#')[0].split('?')[0];
+
+    const menuLists = document.querySelectorAll('.main-menu__list');
+    menuLists.forEach(menu => {
+      const items = menu.querySelectorAll(':scope > li');
+      let matched = false;
+      items.forEach(li => {
+        const anchor = li.querySelector(':scope > a');
+        if (anchor) {
+          const rawHref = anchor.getAttribute('href') || '';
+          const cleanHref = rawHref.replace(/^(\.\/|\/)/, '').split('#')[0].split('?')[0];
+          const isMatch = cleanHref === fileName || (fileName === 'index.html' && (cleanHref === 'index.html' || cleanHref === '' || cleanHref === '/'));
+          if (isMatch) {
+            li.classList.add('current');
+            matched = true;
+          } else {
+            li.classList.remove('current');
+          }
+        }
+      });
+      // Fallback for homepage
+      if (!matched && (fileName === 'index.html' || fileName === '') && items.length > 0) {
+        items[0].classList.add('current');
+      }
+    });
+  }
+
+  // Hook into mobile menu toggler to re-evaluate active item upon opening
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.mobile-nav__toggler')) {
+      setTimeout(ensureActiveNavLinks, 50);
+      setTimeout(ensureActiveNavLinks, 200);
+    }
+  });
+
   // Run on DOM loaded, window load, and after a brief delay for sticky cloned header
   document.addEventListener('DOMContentLoaded', function () {
     updateHeaderAuthUI();
+    ensureActiveNavLinks();
     update404UI();
     setupContentButtons404Routing();
     setupInputValidationRestrictions();
@@ -429,6 +472,7 @@
   });
   window.addEventListener('load', function () {
     updateHeaderAuthUI();
+    ensureActiveNavLinks();
     update404UI();
     setupContentButtons404Routing();
     setupInputValidationRestrictions();
@@ -436,10 +480,12 @@
   });
   setTimeout(function () {
     updateHeaderAuthUI();
+    ensureActiveNavLinks();
     update404UI();
   }, 400);
   setTimeout(function () {
     updateHeaderAuthUI();
+    ensureActiveNavLinks();
     update404UI();
   }, 1000);
 })();

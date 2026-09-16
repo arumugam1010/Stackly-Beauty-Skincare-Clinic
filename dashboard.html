@@ -147,6 +147,22 @@
             sidebarCloseBtn.addEventListener('click', closeSidebar);
             sidebarOverlay.addEventListener('click', closeSidebar);
 
+            // Auto-close mobile sidebar and remove overlay when resizing back to desktop view (>= 992px)
+            function handleDashboardResize() {
+                if (window.innerWidth >= 992) {
+                    closeSidebar();
+                }
+            }
+            window.addEventListener('resize', handleDashboardResize, { passive: true });
+            handleDashboardResize();
+
+            // Close on Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeSidebar();
+                }
+            });
+
             // Logout Handler
             sidebarLogoutBtn.addEventListener('click', function () {
                 StacklyAuth.logoutUser(true);

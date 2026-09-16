@@ -1217,6 +1217,17 @@
   opacity: 1;
 }
 
+/* Force hide dashboard mobile overlay on desktop screens (>= 992px) */
+@media (min-width: 992px) {
+  .dash-sidebar-overlay,
+  .dash-sidebar-overlay.active {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
 /* --------------------------------------------------------------------------
    4. 404 Page Styles
    -------------------------------------------------------------------------- */

@@ -3279,14 +3279,27 @@ textarea.dash-control-input {
   display: none !important;
 }
 
+/* ==========================================================================
+   Proprietary Technology / Why Choose One Section Spacing Fix
+   Adds generous breathing room below the content so it does not touch the bottom marquee div
+   ========================================================================== */
+.why-choose-one {
+  padding-bottom: 110px !important;
+}
 
+.why-choose-one__img img {
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
 
+@media (max-width: 991px) {
+  .why-choose-one {
+    padding-bottom: 80px !important;
+  }
+}
 
-
-
-
-
-
-
-
-
+@media (max-width: 767px) {
+  .why-choose-one {
+    padding-bottom: 60px !important;
+  }
+}

@@ -211,9 +211,14 @@
                 }
             });
 
-            // Logout Handler
+            // Logout Handler: Clears session and redirects directly to login.html
             sidebarLogoutBtn.addEventListener('click', function () {
-                StacklyAuth.logoutUser(true);
+                if (window.StacklyAuth && typeof window.StacklyAuth.logoutUser === 'function') {
+                    StacklyAuth.logoutUser(true);
+                } else {
+                    localStorage.removeItem('stackly_auth_user');
+                    window.location.href = 'login.html';
+                }
             });
 
             // Activate and display a specific sidebar view by index

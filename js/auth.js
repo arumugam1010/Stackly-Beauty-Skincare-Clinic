@@ -103,7 +103,7 @@
   function logoutUser(redirect = true) {
     localStorage.removeItem(AUTH_STORAGE_KEY);
     if (redirect) {
-      window.location.href = 'index.html';
+      window.location.href = 'login.html';
     } else {
       updateHeaderAuthUI();
     }

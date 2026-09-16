@@ -313,72 +313,259 @@
 
   // --------------------------------------------------------------------------
   // Global Input Constraints:
-  // 1. Name fields: No numbers allowed (letters & spaces only)
-  // 2. Phone fields: No alphabets allowed (numbers & phone symbols only)
+  // 1. Name fields: NO NUMBERS allowed (0-9 blocked on keydown, beforeinput, input & paste)
+  // 2. Number/Phone fields: NO ALPHABETS allowed (a-zA-Z blocked on keydown, beforeinput, input & paste)
   // --------------------------------------------------------------------------
   function setupInputValidationRestrictions() {
+    function getAssociatedLabelText(el) {
+      if (!el) return '';
+      let text = '';
+      if (el.id) {
+        try {
+          const lbl = document.querySelector(`label[for="${CSS.escape(el.id)}"]`);
+          if (lbl) text = lbl.textContent || '';
+        } catch (_) {}
+      }
+      if (!text) {
+        let prev = el.previousElementSibling;
+        while (prev) {
+          if (prev.tagName === 'LABEL') {
+            text = prev.textContent || '';
+            break;
+          }
+          prev = prev.previousElementSibling;
+        }
+      }
+      if (!text) {
+        const parent = el.closest('.auth-form-group, .dash-form-row > div, .dash-form-group, .form-group, div');
+        if (parent) {
+          const lbl = parent.querySelector('label');
+          if (lbl && !lbl.contains(el)) text = lbl.textContent || '';
+        }
+      }
+      return text.trim().toLowerCase();
+    }
+
     function isNameInput(el) {
       if (!el || el.tagName !== 'INPUT') return false;
-      const name = (el.name || '').toLowerCase();
+      const type = (el.type || 'text').toLowerCase();
+      if (['password', 'email', 'checkbox', 'radio', 'submit', 'button', 'file', 'hidden', 'date', 'number', 'tel'].includes(type)) {
+        return false;
+      }
+
       const id = (el.id || '').toLowerCase();
+      const name = (el.name || '').toLowerCase();
       const placeholder = (el.placeholder || '').toLowerCase();
+      const dataType = (el.dataset.type || '').toLowerCase();
+      const autocomplete = (el.autocomplete || '').toLowerCase();
+      const labelText = getAssociatedLabelText(el);
+
+      if (dataType === 'name') return true;
+
+      // Exclude platform / clinic / branch / business names
+      const isExcluded =
+        labelText.includes('platform') ||
+        labelText.includes('legal') ||
+        labelText.includes('clinic') ||
+        labelText.includes('branch') ||
+        labelText.includes('headline') ||
+        labelText.includes('subject') ||
+        labelText.includes('directive') ||
+        labelText.includes('service') ||
+        labelText.includes('treatment') ||
+        labelText.includes('file');
+
+      if (isExcluded) return false;
+
       return (
+        id === 'regname' ||
+        id === 'profilename' ||
+        id === 'profilefullname' ||
+        id.includes('fullname') ||
         name === 'name' ||
         name === 'fullname' ||
         name === 'firstname' ||
         name === 'lastname' ||
-        id === 'regname' ||
-        id === 'name' ||
-        placeholder.includes('name')
+        name === 'leadname' ||
+        name === 'managername' ||
+        autocomplete === 'name' ||
+        placeholder.includes('eleanor') ||
+        placeholder.includes('scarlett') ||
+        placeholder.includes('johansson') ||
+        placeholder.includes('vance') ||
+        placeholder === 'name' ||
+        placeholder.includes('full name') ||
+        labelText === 'name' ||
+        labelText.includes('full name') ||
+        labelText.includes('lead name') ||
+        labelText.includes('manager full name') ||
+        labelText.includes('signing manager') ||
+        labelText.includes('assigned consultant') ||
+        labelText.includes('patient name') ||
+        labelText.includes('your name')
       );
     }
 
-    function isPhoneInput(el) {
+    function isPhoneOrNumberInput(el) {
       if (!el || el.tagName !== 'INPUT') return false;
-      const name = (el.name || '').toLowerCase();
+      const type = (el.type || 'text').toLowerCase();
+      if (['password', 'email', 'checkbox', 'radio', 'submit', 'button', 'file', 'hidden'].includes(type)) {
+        return false;
+      }
+
       const id = (el.id || '').toLowerCase();
-      const type = (el.type || '').toLowerCase();
+      const name = (el.name || '').toLowerCase();
       const placeholder = (el.placeholder || '').toLowerCase();
+      const dataType = (el.dataset.type || '').toLowerCase();
+      const inputmode = (el.inputMode || '').toLowerCase();
+      const labelText = getAssociatedLabelText(el);
+
+      if (dataType === 'phone' || dataType === 'number') return true;
+      if (type === 'tel' || type === 'number') return true;
+      if (inputmode === 'numeric' || inputmode === 'tel' || inputmode === 'decimal') return true;
+
       return (
-        type === 'tel' ||
-        name === 'phone' ||
-        name === 'phonenumber' ||
-        name === 'mobile' ||
-        id === 'phone' ||
+        id.includes('phone') ||
+        id.includes('mobile') ||
+        id.includes('tel') ||
+        id.includes('hotline') ||
+        name.includes('phone') ||
+        name.includes('mobile') ||
+        name.includes('tel') ||
         placeholder.includes('phone') ||
-        placeholder.includes('mobile')
+        placeholder.includes('mobile') ||
+        placeholder.includes('(555)') ||
+        placeholder.includes('000-0000') ||
+        labelText.includes('phone') ||
+        labelText.includes('mobile') ||
+        labelText.includes('telephone') ||
+        labelText.includes('hotline') ||
+        (labelText.includes('number') && !labelText.includes('name'))
       );
     }
 
-    // 1. Prevent typing prohibited characters
-    document.addEventListener('keypress', function (e) {
+    function flashWarning(input, msg) {
+      if (!input) return;
+      input.classList.add('input-restriction-invalid');
+      setTimeout(() => input.classList.remove('input-restriction-invalid'), 600);
+
+      // Parent container to position toast
+      const parent = input.parentElement;
+      if (parent) {
+        let existingToast = parent.querySelector('.input-restriction-toast');
+        if (!existingToast) {
+          const originalPosition = window.getComputedStyle(parent).position;
+          if (originalPosition === 'static') {
+            parent.style.position = 'relative';
+          }
+          const toast = document.createElement('div');
+          toast.className = 'input-restriction-toast';
+          toast.innerHTML = `<i class="fas fa-exclamation-triangle"></i> <span>${msg}</span>`;
+          parent.appendChild(toast);
+          setTimeout(() => {
+            if (toast && toast.parentNode) {
+              toast.parentNode.removeChild(toast);
+            }
+          }, 1800);
+        }
+      }
+    }
+
+    // 1. Keydown blocker (prevents unwanted characters from being typed)
+    document.addEventListener('keydown', function (e) {
       const target = e.target;
+      if (!target || target.tagName !== 'INPUT') return;
+
+      // Allow control combos (Ctrl+C, Ctrl+V, Ctrl+A, Ctrl+Z, Meta, Alt)
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      // Allow navigation and editing keys
+      const safeKeys = ['Backspace', 'Delete', 'Tab', 'Enter', 'Escape', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
+      if (safeKeys.includes(e.key)) return;
+
       if (isNameInput(target)) {
-        // Disallow numbers (0-9)
+        // Block numbers in Name field
         if (/[0-9]/.test(e.key)) {
           e.preventDefault();
+          e.stopPropagation();
+          flashWarning(target, 'Numbers are not allowed in name');
           return false;
         }
-      } else if (isPhoneInput(target)) {
-        // Disallow alphabets (a-z, A-Z)
+      } else if (isPhoneOrNumberInput(target)) {
+        // Block alphabetic characters in Phone/Number field
         if (/[a-zA-Z]/.test(e.key)) {
           e.preventDefault();
+          e.stopPropagation();
+          flashWarning(target, 'Alphabets are not allowed in phone/number');
           return false;
         }
       }
     }, true);
 
-    // 2. Immediate sanitization on input (handles paste, drag-and-drop, autofill)
+    // 2. Beforeinput blocker (modern browsers, mobile virtual keyboards)
+    document.addEventListener('beforeinput', function (e) {
+      const target = e.target;
+      if (!target || target.tagName !== 'INPUT') return;
+
+      if (e.data) {
+        if (isNameInput(target) && /[0-9]/.test(e.data)) {
+          e.preventDefault();
+          flashWarning(target, 'Numbers are not allowed in name');
+          return false;
+        }
+        if (isPhoneOrNumberInput(target) && /[a-zA-Z]/.test(e.data)) {
+          e.preventDefault();
+          flashWarning(target, 'Alphabets are not allowed in phone/number');
+          return false;
+        }
+      }
+    }, true);
+
+    // 3. Input sanitizer (handles paste, drag-and-drop, browser autofill)
     document.addEventListener('input', function (e) {
       const target = e.target;
+      if (!target || target.tagName !== 'INPUT') return;
+
       if (isNameInput(target)) {
         if (/[0-9]/.test(target.value)) {
+          const pos = target.selectionStart;
           target.value = target.value.replace(/[0-9]/g, '');
+          if (pos !== null) {
+            const newPos = Math.max(0, pos - 1);
+            target.setSelectionRange(newPos, newPos);
+          }
+          flashWarning(target, 'Numbers are not allowed in name');
         }
-      } else if (isPhoneInput(target)) {
+      } else if (isPhoneOrNumberInput(target)) {
         if (/[a-zA-Z]/.test(target.value)) {
+          const pos = target.selectionStart;
           target.value = target.value.replace(/[a-zA-Z]/g, '');
+          if (pos !== null) {
+            const newPos = Math.max(0, pos - 1);
+            target.setSelectionRange(newPos, newPos);
+          }
+          flashWarning(target, 'Alphabets are not allowed in phone/number');
         }
+      }
+    }, true);
+
+    // 4. Paste interceptor (strips disallowed characters upon paste)
+    document.addEventListener('paste', function (e) {
+      const target = e.target;
+      if (!target || target.tagName !== 'INPUT') return;
+
+      const pastedData = (e.clipboardData || window.clipboardData)?.getData('text') || '';
+      if (!pastedData) return;
+
+      if (isNameInput(target) && /[0-9]/.test(pastedData)) {
+        e.preventDefault();
+        const cleaned = pastedData.replace(/[0-9]/g, '');
+        document.execCommand('insertText', false, cleaned);
+        flashWarning(target, 'Numbers removed from pasted text');
+      } else if (isPhoneOrNumberInput(target) && /[a-zA-Z]/.test(pastedData)) {
+        e.preventDefault();
+        const cleaned = pastedData.replace(/[a-zA-Z]/g, '');
+        document.execCommand('insertText', false, cleaned);
+        flashWarning(target, 'Alphabets removed from pasted text');
       }
     }, true);
   }

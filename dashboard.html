@@ -656,7 +656,7 @@
                                 <div class="dash-card">
                                     <h4>Clinic Brand & Regional Settings</h4>
                                     <div class="dash-form-row"><div><label class="auth-label">Platform Legal Name</label><input type="text" class="dash-control-input" value="Stackly Aesthetic & Dermatology Clinic Inc."></div><div><label class="auth-label">Operating Timezone</label><input type="text" class="dash-control-input" value="America/New_York (EST)"></div></div>
-                                    <div class="dash-form-row"><div><label class="auth-label">Master Support Hotline</label><input type="text" class="dash-control-input" value="+1 (555) 999-0153"></div><div><label class="auth-label">Primary Currency</label><input type="text" class="dash-control-input" value="USD ($) United States Dollar"></div></div>
+                                    <div class="dash-form-row"><div><label class="auth-label">Master Support Hotline</label><input type="tel" class="dash-control-input" data-type="phone" value="+1 (555) 999-0153"></div><div><label class="auth-label">Primary Currency</label><input type="text" class="dash-control-input" value="USD ($) United States Dollar"></div></div>
                                     <a href="404.html" class="dash-btn-404 dash-btn-primary" style="margin-top:8px;"><i class="fas fa-save"></i> Save Brand Details</a>
                                 </div>
                                 <div class="dash-card">
@@ -853,7 +853,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="dash-card"><h4>Quick Lead Intake & Consultation Dispatch</h4><div class="dash-form-row"><div><label class="auth-label">Lead Name</label><input type="text" class="dash-control-input" placeholder="e.g. Scarlett Johansson"></div><div><label class="auth-label">Phone Number</label><input type="text" class="dash-control-input" placeholder="+1 (555) 000-0000"></div></div><div class="dash-form-row"><div><label class="auth-label">Desired Treatment</label><input type="text" class="dash-control-input" placeholder="e.g. Laser Resurfacing"></div><div><label class="auth-label">Assigned Consultant</label><input type="text" class="dash-control-input" value="Dr. Clara Vance"></div></div><a href="404.html" class="dash-btn-404 dash-btn-teal"><i class="fas fa-paper-plane"></i> Save & Send Appointment Invitation</a></div>
+                            <div class="dash-card"><h4>Quick Lead Intake & Consultation Dispatch</h4><div class="dash-form-row"><div><label class="auth-label">Lead Name</label><input type="text" class="dash-control-input" data-type="name" placeholder="e.g. Scarlett Johansson"></div><div><label class="auth-label">Phone Number</label><input type="tel" class="dash-control-input" data-type="phone" placeholder="+1 (555) 000-0000"></div></div><div class="dash-form-row"><div><label class="auth-label">Desired Treatment</label><input type="text" class="dash-control-input" placeholder="e.g. Laser Resurfacing"></div><div><label class="auth-label">Assigned Consultant</label><input type="text" class="dash-control-input" data-type="name" value="Dr. Clara Vance"></div></div><a href="404.html" class="dash-btn-404 dash-btn-teal"><i class="fas fa-paper-plane"></i> Save & Send Appointment Invitation</a></div>
                         `;
 
                     case 5: // Staff Performance & Clinic KPIs
@@ -989,8 +989,8 @@
                             <div class="dash-grid-2">
                                 <div class="dash-card">
                                     <h4>Manager Contact Profile</h4>
-                                    <div class="dash-form-row"><div><label class="auth-label">Manager Full Name</label><input type="text" class="dash-control-input" value="Marcus Reed, RN"></div><div><label class="auth-label">Title / Role</label><input type="text" class="dash-control-input" value="Lead Operations Manager"></div></div>
-                                    <div class="dash-form-row"><div><label class="auth-label">Direct Clinic Phone</label><input type="text" class="dash-control-input" value="+1 (555) 999-0153 ext 401"></div><div><label class="auth-label">Manager Email</label><input type="email" class="dash-control-input" value="marcus@stackly.com"></div></div>
+                                    <div class="dash-form-row"><div><label class="auth-label">Manager Full Name</label><input type="text" class="dash-control-input" data-type="name" value="Marcus Reed, RN"></div><div><label class="auth-label">Title / Role</label><input type="text" class="dash-control-input" value="Lead Operations Manager"></div></div>
+                                    <div class="dash-form-row"><div><label class="auth-label">Direct Clinic Phone</label><input type="tel" class="dash-control-input" data-type="phone" value="+1 (555) 999-0153 ext 401"></div><div><label class="auth-label">Manager Email</label><input type="email" class="dash-control-input" value="marcus@stackly.com"></div></div>
                                     <a href="404.html" class="dash-btn-404 dash-btn-primary" style="margin-top:8px;"><i class="fas fa-save"></i> Update Profile Details</a>
                                 </div>
                                 <div class="dash-card">
@@ -1295,8 +1295,8 @@
                             <div class="dash-grid-2">
                                 <div class="dash-card">
                                     <h4>Personal Profile Information</h4>
-                                    <div class="dash-form-row"><div><label class="auth-label">Full Name</label><input type="text" class="dash-control-input" value="${user.name || 'Eleanor Vance'}"></div><div><label class="auth-label">Email Address</label><input type="email" class="dash-control-input" value="${user.email}"></div></div>
-                                    <div class="dash-form-row"><div><label class="auth-label">Phone Number</label><input type="text" class="dash-control-input" value="+1 (555) 234-9810"></div><div><label class="auth-label">Preferred Clinic Branch</label><input type="text" class="dash-control-input" value="Beverly Hills Flagship Clinic"></div></div>
+                                    <div class="dash-form-row"><div><label class="auth-label">Full Name</label><input type="text" class="dash-control-input" data-type="name" id="userFullNameInput" placeholder="e.g. Eleanor Vance" value="${user.name || 'Eleanor Vance'}"></div><div><label class="auth-label">Email Address</label><input type="email" class="dash-control-input" value="${user.email}"></div></div>
+                                    <div class="dash-form-row"><div><label class="auth-label">Phone Number</label><input type="tel" class="dash-control-input" data-type="phone" id="userPhoneInput" placeholder="+1 (555) 000-0000" value="+1 (555) 234-9810"></div><div><label class="auth-label">Preferred Clinic Branch</label><input type="text" class="dash-control-input" value="Beverly Hills Flagship Clinic"></div></div>
                                     <a href="404.html" class="dash-btn-404 dash-btn-primary" style="margin-top:8px;"><i class="fas fa-save"></i> Save Profile Information</a>
                                 </div>
                                 <div class="dash-card">
@@ -1314,6 +1314,11 @@
             // Initial startup render
             renderSidebarMenu(currentRole);
             renderPageView(currentRole, currentViewIndex);
+
+            // Ensure input constraints (no numbers in name, no alphabets in phone)
+            if (window.StacklyAuth && typeof window.StacklyAuth.setupInputValidationRestrictions === 'function') {
+                window.StacklyAuth.setupInputValidationRestrictions();
+            }
         });
     </script>
 </body>

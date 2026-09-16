@@ -64,7 +64,10 @@
                 <label class="auth-label" for="regName">Full Name</label>
                 <div class="auth-input-wrapper">
                     <i class="fas fa-user auth-input-icon"></i>
-                    <input type="text" id="regName" class="auth-input" placeholder="e.g. Eleanor Vance" required autocomplete="name">
+                    <input type="text" id="regName" class="auth-input" placeholder="e.g. Eleanor Vance" required autocomplete="name" data-type="name">
+                </div>
+                <div class="auth-error-msg" id="regNameErrorMsg">
+                    <i class="fas fa-exclamation-circle"></i> Name can only contain letters and spaces (numbers not allowed).
                 </div>
             </div>
 
@@ -141,9 +144,47 @@
             const confirmPwdToggleIcon = document.getElementById('regConfirmPwdToggleIcon');
             const registerForm = document.getElementById('registerForm');
 
+            const nameErrorMsg = document.getElementById('regNameErrorMsg');
             const emailErrorMsg = document.getElementById('regEmailErrorMsg');
             const passwordErrorMsg = document.getElementById('regPasswordErrorMsg');
             const confirmErrorMsg = document.getElementById('confirmErrorMsg');
+
+            // Name Validation feedback (Strictly NO numbers allowed)
+            function evaluateName() {
+                const rawVal = nameInput.value;
+                const trimmed = rawVal.trim();
+                const hasNumbers = /[0-9]/.test(rawVal);
+
+                if (hasNumbers) {
+                    nameInput.classList.add('is-invalid');
+                    nameInput.classList.remove('is-valid');
+                    if (nameErrorMsg) {
+                        nameErrorMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Name cannot contain numbers.';
+                        nameErrorMsg.style.display = 'flex';
+                    }
+                    return false;
+                } else if (trimmed.length >= 2) {
+                    nameInput.classList.remove('is-invalid');
+                    nameInput.classList.add('is-valid');
+                    if (nameErrorMsg) nameErrorMsg.style.display = 'none';
+                    return true;
+                } else if (trimmed.length > 0) {
+                    nameInput.classList.remove('is-valid', 'is-invalid');
+                    if (nameErrorMsg) nameErrorMsg.style.display = 'none';
+                    return false;
+                } else {
+                    nameInput.classList.remove('is-valid', 'is-invalid');
+                    if (nameErrorMsg) nameErrorMsg.style.display = 'none';
+                    return false;
+                }
+            }
+
+            nameInput.addEventListener('input', function () {
+                if (/[0-9]/.test(nameInput.value)) {
+                    nameInput.value = nameInput.value.replace(/[0-9]/g, '');
+                }
+                evaluateName();
+            });
 
             // Toggle Password Visibility
             pwdToggleBtn.addEventListener('click', function () {
@@ -226,13 +267,24 @@
                 e.preventDefault();
 
                 const email = emailInput.value.trim();
-                const name = nameInput.value.trim() || email.split('@')[0];
+                const name = nameInput.value.trim();
                 const password = passwordInput.value;
+                const isNameValid = evaluateName();
                 const isEmailValid = StacklyAuth.validateEmail(email);
                 const isPasswordValid = evaluatePassword();
                 const isMatch = password === confirmInput.value;
 
                 let hasError = false;
+
+                if (!isNameValid || name.length < 2) {
+                    nameInput.classList.add('is-invalid');
+                    nameInput.classList.remove('is-valid');
+                    if (nameErrorMsg) {
+                        nameErrorMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please enter your name (letters only, min 2 characters).';
+                        nameErrorMsg.style.display = 'flex';
+                    }
+                    hasError = true;
+                }
 
                 if (!isEmailValid) {
                     emailInput.classList.add('is-invalid');

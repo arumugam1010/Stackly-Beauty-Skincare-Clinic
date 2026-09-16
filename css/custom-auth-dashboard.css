@@ -469,6 +469,44 @@
   gap: 4px;
 }
 
+/* Input Character Restrictions (No Numbers in Name, No Alphabets in Phone/Number) */
+.input-restriction-invalid {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+  animation: shakeInputShort 0.28s ease !important;
+}
+
+@keyframes shakeInputShort {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.input-restriction-toast {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  pointer-events: none;
+  animation: toastFadeIn 0.2s ease-out;
+}
+
+@keyframes toastFadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Password Validation Rule Checklist Chips */
 .pwd-rules-box {
   background: #f8fafc;

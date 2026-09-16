@@ -3201,6 +3201,13 @@ textarea.dash-control-input {
   border-radius: 2px !important;
 }
 
+/* Remove Social Media Icons from Mobile Navigation Sidebar Drawer */
+.mobile-nav__top,
+.mobile-nav__social {
+  display: none !important;
+}
+
+
 
 
 

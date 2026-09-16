@@ -67,19 +67,44 @@
              MAIN CONTENT AREA (Dynamically renders each separate page view)
              ================================================================ -->
         <main class="dash-main">
-            <!-- Topbar Header -->
-            <header class="dash-topbar">
+            <!-- Topbar Header (Sticky Navigation) -->
+            <header class="dash-topbar" id="dashTopbar">
+                <!-- Mobile Brand Logo (Visible ONLY on mobile screens <= 991px) -->
+                <a href="javascript:void(0);" class="dash-topbar-mobile-logo" id="dashMobileLogo" title="Dashboard">
+                    <img src="images/logo-stackly.png" alt="Stackly" style="max-height: 34px; width: auto;">
+                </a>
+
+                <!-- Desktop Left: Greeting (Hidden on mobile <= 991px, visible on desktop >= 992px) -->
                 <div class="dash-topbar-left">
-                    <button type="button" class="dash-mobile-toggler" id="sidebarOpenBtn" aria-label="Toggle Navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
                     <div class="dash-greeting">
                         <h3 id="topbarGreetingTitle">Welcome Back</h3>
                         <p id="topbarGreetingSub">Select any module from the sidebar to view its dedicated section.</p>
                     </div>
                 </div>
 
+                <!-- Right Actions: Mobile Hamburger Toggler (Visible on mobile <= 991px) & Desktop Actions -->
+                <div class="dash-topbar-right">
+                    <a href="index.html" class="dash-home-btn" title="Return to Website Home">
+                        <i class="fas fa-home"></i> <span>Home</span>
+                    </a>
+                    <button type="button" class="dash-mobile-toggler" id="sidebarOpenBtn" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </header>
+
+            <!-- Mobile Page Welcome Header (Visible ONLY on mobile <= 991px, placed directly on page content) -->
+            <div class="dash-mobile-page-header" id="dashMobilePageHeader">
+                <div class="dash-mobile-welcome-card">
+                    <div class="dash-mobile-welcome-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="dash-mobile-welcome-text">
+                        <h2 id="mobileGreetingTitle">Welcome Back</h2>
+                        <p id="mobileGreetingSub">Select any module from the menu.</p>
+                    </div>
+                </div>
+            </div>
 
             <!-- Dynamic Subview Container (Contains the 10 separate pages inside dashboard.html) -->
             <div class="dash-content" id="dashContentArea">
@@ -155,6 +180,29 @@
             }
             window.addEventListener('resize', handleDashboardResize, { passive: true });
             handleDashboardResize();
+
+            // Sticky Topbar Scroll Shadow & Persistence
+            function handleTopbarScroll() {
+                const topbar = document.getElementById('dashTopbar');
+                if (topbar) {
+                    if (window.pageYOffset > 10) {
+                        topbar.classList.add('dash-topbar-sticky');
+                    } else {
+                        topbar.classList.remove('dash-topbar-sticky');
+                    }
+                }
+            }
+            window.addEventListener('scroll', handleTopbarScroll, { passive: true });
+            handleTopbarScroll();
+
+            // Mobile Logo click handler: activates overview
+            const dashMobileLogo = document.getElementById('dashMobileLogo');
+            if (dashMobileLogo) {
+                dashMobileLogo.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    activateSidebarView(0);
+                });
+            }
 
             // Close on Escape key
             document.addEventListener('keydown', function (e) {
@@ -267,9 +315,15 @@
                 const currentItem = config.sidebar[index] || config.sidebar[0];
                 const displayName = getFormattedUserName(user);
 
-                // Welcome Back, [Name] in Topbar Header
-                topbarGreetingTitle.textContent = `Welcome Back, ${displayName}`;
-                topbarGreetingSub.textContent = `${config.title} • ${currentItem.title}`;
+                // Welcome Back, [Name] in Topbar Header (Desktop)
+                if (topbarGreetingTitle) topbarGreetingTitle.textContent = `Welcome Back, ${displayName}`;
+                if (topbarGreetingSub) topbarGreetingSub.textContent = `${config.title} • ${currentItem.title}`;
+
+                // Welcome Back, [Name] in Mobile Page Header (Mobile content)
+                const mobileGreetingTitle = document.getElementById('mobileGreetingTitle');
+                const mobileGreetingSub = document.getElementById('mobileGreetingSub');
+                if (mobileGreetingTitle) mobileGreetingTitle.textContent = `Welcome Back, ${displayName}`;
+                if (mobileGreetingSub) mobileGreetingSub.textContent = `${config.title} • ${currentItem.title}`;
 
                 let htmlContent = '';
 

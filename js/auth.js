@@ -663,6 +663,40 @@
 
   window.addEventListener('resize', handleNavResize, { passive: true });
 
+  // Floating Up Arrow Scroll-To-Top Controller
+  function initScrollToTop() {
+    const btns = document.querySelectorAll('.scroll-to-top, .scroll-to-target');
+    if (!btns.length) return;
+
+    btns.forEach(btn => {
+      btn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+      btn.setAttribute('aria-label', 'Scroll to top');
+      btn.setAttribute('title', 'Scroll to top');
+
+      btn.onclick = function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      };
+    });
+
+    function checkScroll() {
+      const show = window.pageYOffset > 250;
+      btns.forEach(btn => {
+        if (show) {
+          btn.classList.add('show');
+        } else {
+          btn.classList.remove('show');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll();
+  }
+
   // Run on DOM loaded, window load, and after a brief delay for sticky cloned header
   document.addEventListener('DOMContentLoaded', function () {
     handleNavResize();
@@ -672,6 +706,7 @@
     setupContentButtons404Routing();
     setupInputValidationRestrictions();
     initMobileStickyNav();
+    initScrollToTop();
   });
   window.addEventListener('load', function () {
     handleNavResize();
@@ -681,16 +716,19 @@
     setupContentButtons404Routing();
     setupInputValidationRestrictions();
     initMobileStickyNav();
+    initScrollToTop();
   });
   setTimeout(function () {
     updateHeaderAuthUI();
     ensureActiveNavLinks();
     update404UI();
+    initScrollToTop();
   }, 400);
   setTimeout(function () {
     updateHeaderAuthUI();
     ensureActiveNavLinks();
     update404UI();
+    initScrollToTop();
   }, 1000);
 })();
 

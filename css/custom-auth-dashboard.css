@@ -3222,6 +3222,64 @@ textarea.dash-control-input {
   transition: opacity 0.2s ease !important;
 }
 
+/* ==========================================================================
+   Modern Floating Up Arrow Scroll-To-Top Button
+   ========================================================================== */
+.scroll-to-top {
+  position: fixed !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  width: 48px !important;
+  height: 48px !important;
+  background: #36B89E !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 18px rgba(54, 184, 158, 0.4) !important;
+  z-index: 9999 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(12px) !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border: none !important;
+}
+
+.scroll-to-top i {
+  font-size: 18px !important;
+  color: #ffffff !important;
+  line-height: 1 !important;
+  transition: transform 0.2s ease !important;
+}
+
+.scroll-to-top:hover {
+  background: #14283A !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 25px rgba(20, 40, 58, 0.4) !important;
+  transform: translateY(-4px) !important;
+}
+
+.scroll-to-top:hover i {
+  transform: translateY(-2px) !important;
+}
+
+.scroll-to-top.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+/* Hide legacy rotated text and loading bar */
+.scroll-to-top__text,
+.scroll-to-top__wrapper,
+.scroll-to-top__inner {
+  display: none !important;
+}
+
+
 
 
 

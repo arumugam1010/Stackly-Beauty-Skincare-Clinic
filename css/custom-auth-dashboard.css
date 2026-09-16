@@ -2916,6 +2916,26 @@ textarea.dash-control-input {
   }
 }
 
+/* Ensure mobile drawer is completely hidden and inactive on desktop screens (>= 1200px) */
+@media (min-width: 1200px) {
+  .mobile-nav__wrapper,
+  .mobile-nav__wrapper.expanded {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateX(-100%) !important;
+  }
+  .mobile-nav__wrapper .mobile-nav__content {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transform: translateX(-100%) !important;
+  }
+  body.locked {
+    overflow: auto !important;
+  }
+}
+
 /* ==========================================================================
    Active Page Indicators (Mobile Navigation Drawer & Desktop Navigation)
    ========================================================================== */

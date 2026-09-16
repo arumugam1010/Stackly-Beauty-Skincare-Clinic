@@ -461,8 +461,24 @@
     }
   });
 
+  // Auto-close mobile navigation drawer when resizing/switching to desktop view (>= 1200px)
+  function handleNavResize() {
+    if (window.innerWidth >= 1200) {
+      const mobileNav = document.querySelector('.mobile-nav__wrapper');
+      if (mobileNav && mobileNav.classList.contains('expanded')) {
+        mobileNav.classList.remove('expanded');
+      }
+      if (document.body.classList.contains('locked')) {
+        document.body.classList.remove('locked');
+      }
+    }
+  }
+
+  window.addEventListener('resize', handleNavResize, { passive: true });
+
   // Run on DOM loaded, window load, and after a brief delay for sticky cloned header
   document.addEventListener('DOMContentLoaded', function () {
+    handleNavResize();
     updateHeaderAuthUI();
     ensureActiveNavLinks();
     update404UI();
@@ -471,6 +487,7 @@
     initMobileStickyNav();
   });
   window.addEventListener('load', function () {
+    handleNavResize();
     updateHeaderAuthUI();
     ensureActiveNavLinks();
     update404UI();

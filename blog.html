@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Our Blog || Stackly </title>
+    <!-- Favicon removed -->
+    <link rel="icon" href="data:,">
+<meta name="description" content="Stackly " />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <!-- All Bundled CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-auth-dashboard.css?v=2.4">
+</head>
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+    <!--Start Preloader-->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!--End Preloader-->
+
+    <!-- Start sidebar widget content -->
+    <div class="xs-sidebar-group info-group info-sidebar">
+        <div class="xs-overlay xs-bg-black"></div>
+        <div class="xs-sidebar-widget">
+            <div class="sidebar-widget-container">
+                <div class="widget-heading">
+                    <a href="#" class="close-side-widget">X</a>
+                </div>
+                <div class="sidebar-textwidget">
+                    <div class="sidebar-info-contents">
+                        <div class="content-inner">
+                            <div class="logo"><a href="index.html"><img src="images/logo-stackly.png" alt="Stackly" style="max-height: 48px; width: auto;"></a></div>
+                            <div class="content-box">
+                                <h4>About Us</h4>
+                                <div class="inner-text">
+                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                                        roots in a piece of classical Latin literature from 45 BC, making it over
+                                        2000 years old.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-inner">
+                                <h4>Get a free quote</h4>
+                                <form action="assets/inc/sendemail.php" method="POST" class="contact-form-validated">
+                                    <div class="form-group">
+                                        <input type="text" name="name" placeholder="Name" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="Email" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="message" placeholder="Message..." required=""></textarea>
+                                    </div>
+                                    <div class="form-group message-btn">
+                                        <button class="thm-btn" data-text="Submit Now +" type="submit"
+                                            data-loading-text="Please wait...">Submit Now
+                                            <span class="fas fa-arrow-right"></span>
+                                        </button>
+                                    </div>
+                                    <div class="result"></div>
+                                </form>
+                            </div>
+
+                            <div class="sidebar-contact-info">
+                                <h4>Contact Info</h4>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <span class="icon-maps-and-flags"></span> 88 broklyn street, New York
+                                    </li>
+                                    <li>
+                                        <span class="icon-call"></span>
+                                        <a href="tel:123456789">+1 555-9990-153</a>
+                                    </li>
+                                    <li>
+                                        <span class="icon-email"></span>
+                                        <a href="mailto:info@example.com">info@example.com</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="thm-social-link1">
+                                <ul class="social-box list-unstyled">
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End sidebar widget content -->
+
+
+    <div class="page-wrapper">
+        <header class="main-header">
+            <nav class="main-menu">
+                <div class="main-menu__wrapper">
+                    <div class="main-menu__wrapper-inner">
+                        <div class="main-menu__left">
+                            <div class="main-menu__logo">
+                                <a href="index.html"><img src="images/logo-stackly.png" alt="Stackly" style="max-height: 48px; width: auto;"></a>
+                            </div>
+                        </div>
+                        <div class="main-menu__main-menu-box">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">About</a>
+                                </li>
+                                <li>
+                                    <a href="services.html">Services</a>
+                                </li>
+                                <li>
+                                    <a href="products.html">Shop</a>
+                                </li>
+                                <li class="current">
+                                    <a href="blog.html">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="main-menu__right">
+                            <div class="main-menu__call">
+                                <div class="main-menu__call-icon">
+                                    <i class="icon-telephone"></i>
+                                </div>
+                                <div class="main-menu__call-content">
+                                    <p class="main-menu__call-sub-title">Call Anytime</p>
+                                    <h5 class="main-menu__call-number"><a href="tel:9288006780">+92 ( 8800 ) - 6780</a></h5>
+                                </div>
+                            </div>
+                            <div class="main-menu__search-cart-box">
+                                <div class="main-menu__search-cart-box">
+                                    <div class="main-menu__search-box">
+                                        <a href="#" class="main-menu__search searcher-toggler-box fal fa-search"></a>
+                                    </div>
+                                    <div class="main-menu__cart-box">
+                                        <a href="cart.html" class="main-menu__cart">
+                                            <span class="fal fa-shopping-cart"></span>
+                                            <span class="main-menu__cart-count">02</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-menu__nav-sidebar-icon">
+                                <a class="navSidebar-button" href="#">
+                                    <span class="icon-dots-menu-one"></span>
+                                    <span class="icon-dots-menu-two"></span>
+                                    <span class="icon-dots-menu-three"></span>
+                                </a>
+                            </div>
+                            <div class="main-menu__btn-box auth-nav-box" id="authNavBox">
+                                <div class="auth-nav-group guest-nav-actions" id="guestNavActions">
+                                    <a class="thm-btn auth-nav-btn auth-nav-btn-login" href="login.html" id="navLoginBtn">
+                                        <span>Login</span>
+                                        <i class="fas fa-sign-in-alt"></i>
+                                    </a>
+                                    <a class="thm-btn auth-nav-btn auth-nav-btn-register" href="register.html" id="navRegisterBtn">
+                                        <span>Register</span>
+                                        <i class="fas fa-user-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="auth-nav-group user-nav-actions" id="userNavActions" style="display: none;">
+                                    <a class="thm-btn auth-nav-btn auth-nav-btn-dashboard" href="dashboard.html" id="navDashboardBtn">
+                                        <i class="fas fa-th-large"></i>
+                                        <span>Dashboard</span>
+                                    </a>
+                                    <button type="button" class="auth-nav-logout-btn" title="Logout" aria-label="Logout">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+<!--Page Header Start-->
+<section class="page-header">
+<div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);">
+</div>
+<div class="shape1 float-bob-y"><img alt="" src="assets/images/shapes/page-header-shape1.png"/></div>
+<div class="shape2 float-bob-y"><img alt="" src="assets/images/shapes/page-header-shape2.png"/></div>
+<div class="container">
+<div class="page-header__inner">
+<h2>Our Blog</h2>
+<div class="thm-breadcrumb__inner">
+<ul class="thm-breadcrumb">
+<li><a href="index.html">Home</a></li>
+<li><span>//</span></li>
+<li>Our Blog</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!--Page Header End-->
+<!--Blog One Start-->
+<section class="blog-one">
+<div class="container">
+<div class="row">
+<!--Blog One Content Start-->
+<div class="col-xl-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+<div class="blog-one__content">
+<div class="section-title text-left sec-title-animation animation-style2">
+<div class="section-title__tagline-box">
+<p class="section-title__tagline">Latest News</p>
+<div class="section-title__tagline-shape"></div>
+</div>
+<h2 class="section-title__title title-animation">Inside a World of Relaxing <br/>
+                                    Spa Treatments</h2>
+</div>
+<div class="blog-one__content-text">
+<p>Beautiful skin doesnâ€™t happen overnight. It requires patience, consistency, and the
+                                    right treatments. By understanding your skinâ€™s needs and using products designed to
+                                    support skin health.</p>
+</div>
+</div>
+</div>
+<!--Blog One Content End-->
+<!--Blog One Single Start-->
+<div class="col-xl-6 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+<div class="blog-one__single">
+<div class="blog-one__single-img">
+<div class="blog-one__single-img-inner">
+<img alt="" src="assets/images/blog/blog-v1-img1.jpg"/>
+</div>
+<div class="blog-one__single-content">
+<div class="blog-one__single-content-date">
+<h2>10</h2>
+<p>feb,2026</p>
+</div>
+<div class="blog-one__single-content-inner">
+<h3><a href="404.html">Skincare Secrets for a Natural Glow</a></h3>
+<p>Healthy skin is the foundation of natural
+                                            beauty. A consistent skincare.</p>
+<div class="btn-box">
+<a href="404.html">Read More <span class="icon-right-arrow"></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Blog One Single End-->
+<!--Blog One Single Start-->
+<div class="col-xl-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+<div class="blog-one__single">
+<div class="blog-one__single-img">
+<div class="blog-one__single-img-inner">
+<img alt="" src="assets/images/blog/blog-v1-img2.jpg"/>
+</div>
+<div class="blog-one__single-content">
+<div class="blog-one__single-content-date">
+<h2>10</h2>
+<p>feb,2026</p>
+</div>
+<div class="blog-one__single-content-inner">
+<h3><a href="404.html">Top Skincare Tips for Every Skin Type</a></h3>
+<p>Healthy skin is the foundation of natural
+                                            beauty. A consistent skincare.</p>
+<div class="btn-box">
+<a href="404.html">Read More <span class="icon-right-arrow"></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Blog One Single End-->
+<!--Blog One Single Start-->
+<div class="col-xl-6">
+<div class="blog-one__single">
+<div class="blog-one__single-img">
+<div class="blog-one__single-img-inner">
+<img alt="" src="assets/images/blog/blog-v1-img3.jpg"/>
+</div>
+<div class="blog-one__single-content">
+<div class="blog-one__single-content-date">
+<h2>10</h2>
+<p>feb,2026</p>
+</div>
+<div class="blog-one__single-content-inner">
+<h3><a href="404.html">The Ultimate Guide to Skin Wellness</a></h3>
+<p>Healthy skin is the foundation of natural
+                                            beauty. A consistent skincare.</p>
+<div class="btn-box">
+<a href="404.html">Read More <span class="icon-right-arrow"></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Blog One Single End-->
+<!--Blog One Single Start-->
+<div class="col-xl-6 wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+<div class="blog-one__single">
+<div class="blog-one__single-img">
+<div class="blog-one__single-img-inner">
+<img alt="" src="assets/images/blog/blog-v1-img4.jpg"/>
+</div>
+<div class="blog-one__single-content">
+<div class="blog-one__single-content-date">
+<h2>10</h2>
+<p>feb,2026</p>
+</div>
+<div class="blog-one__single-content-inner">
+<h3><a href="404.html">Best Skincare Tips for Clear &amp; Smooth Skin</a>
+</h3>
+<p>Healthy skin is the foundation of natural
+                                            beauty. A consistent skincare.</p>
+<div class="btn-box">
+<a href="404.html">Read More <span class="icon-right-arrow"></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Blog One Single End-->
+<!--Blog One Single Start-->
+<div class="col-xl-6">
+<div class="blog-one__single">
+<div class="blog-one__single-img">
+<div class="blog-one__single-img-inner">
+<img alt="" src="assets/images/blog/blog-v1-img5.jpg"/>
+</div>
+<div class="blog-one__single-content">
+<div class="blog-one__single-content-date">
+<h2>10</h2>
+<p>feb,2026</p>
+</div>
+<div class="blog-one__single-content-inner">
+<h3><a href="404.html">Skincare Routine That Transforms Your Glow</a>
+</h3>
+<p>Healthy skin is the foundation of natural
+                                            beauty. A consistent skincare.</p>
+<div class="btn-box">
+<a href="404.html">Read More <span class="icon-right-arrow"></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Blog One Single End-->
+</div>
+</div>
+</section>
+<!--Blog One End-->
+<!-- Blog Post 3 -->
+<div class="blog-standard__single wow fadeInUp" data-wow-delay="300ms" style="margin-top: 40px;">
+<div class="row align-items-center">
+<div class="col-xl-7 col-lg-7">
+<div class="blog-standard__content" style="padding: 30px;">
+<span class="stackly-badge stackly-badge--mint">Barrier Science</span>
+<p style="color: var(--pureglow-gray); font-size: 14px; margin-bottom: 8px;"><i class="far fa-calendar-alt"></i> 12 Feb, 2026  |  By Dr. Julian Sterling</p>
+<h2 style="font-size: 26px; line-height: 1.3; font-family: var(--pureglow-font-two);"><a href="contact.html">The Science of Skin Barrier Repair: Why Gentle Care Wins in 2026</a></h2>
+<p style="color: var(--pureglow-gray); margin-top: 12px; line-height: 1.6;">Over-exfoliation has become the leading cause of chronic sensitivity. Learn why rebuilding your lipid matrix with skin-identical ceramides is the true secret to enduring radiance.</p>
+<div style="margin-top: 15px;"><a class="thm-btn" href="404.html">Read Article <span class="fas fa-arrow-right"></span></a></div>
+</div>
+</div>
+<div class="col-xl-5 col-lg-5">
+<img alt="" src="images/blog-v1-img1.jpg" style="border-radius: 12px; width: 100%; object-fit: cover; max-height: 280px;"/>
+</div>
+</div>
+</div>
+<!-- Blog Post 4 -->
+<div class="blog-standard__single wow fadeInUp" data-wow-delay="400ms" style="margin-top: 40px;">
+<div class="row align-items-center">
+<div class="col-xl-7 col-lg-7">
+<div class="blog-standard__content" style="padding: 30px;">
+<span class="stackly-badge">Pigmentation Control</span>
+<p style="color: var(--pureglow-gray); font-size: 14px; margin-bottom: 8px;"><i class="far fa-calendar-alt"></i> 15 Feb, 2026  |  By Dr. Elena Rostova</p>
+<h2 style="font-size: 26px; line-height: 1.3; font-family: var(--pureglow-font-two);"><a href="contact.html">Top 5 Clinical Ingredients for Fading Stubborn Hyperpigmentation</a></h2>
+<p style="color: var(--pureglow-gray); margin-top: 12px; line-height: 1.6;">From tranexamic acid to stabilized alpha-arbutin, discover how targeted tyrosinase inhibitors safely brighten dark spots without triggering rebound redness.</p>
+<div style="margin-top: 15px;"><a class="thm-btn" href="404.html">Read Article <span class="fas fa-arrow-right"></span></a></div>
+</div>
+</div>
+<div class="col-xl-5 col-lg-5">
+<img alt="" src="images/blog-v1-img2.jpg" style="border-radius: 12px; width: 100%; object-fit: cover; max-height: 280px;"/>
+</div>
+</div>
+</div>
+<!-- Blog Post 5 -->
+<div class="blog-standard__single wow fadeInUp" data-wow-delay="500ms" style="margin-top: 40px;">
+<div class="row align-items-center">
+<div class="col-xl-7 col-lg-7">
+<div class="blog-standard__content" style="padding: 30px;">
+<span class="stackly-badge stackly-badge--mint">Chrono-Beauty</span>
+<p style="color: var(--pureglow-gray); font-size: 14px; margin-bottom: 8px;"><i class="far fa-calendar-alt"></i> 18 Feb, 2026  |  By Chloe Bennett</p>
+<h2 style="font-size: 26px; line-height: 1.3; font-family: var(--pureglow-font-two);"><a href="contact.html">Morning vs. Evening Skincare: The Optimal Chrono-Beauty Routine</a></h2>
+<p style="color: var(--pureglow-gray); margin-top: 12px; line-height: 1.6;">Your skin protects during daylight and repairs during slumber. Aligning your actives with circadian biological rhythms amplifies product efficacy by over 200%.</p>
+<div style="margin-top: 15px;"><a class="thm-btn" href="404.html">Read Article <span class="fas fa-arrow-right"></span></a></div>
+</div>
+</div>
+<div class="col-xl-5 col-lg-5">
+<img alt="" src="images/blog-v1-img3.jpg" style="border-radius: 12px; width: 100%; object-fit: cover; max-height: 280px;"/>
+</div>
+</div>
+</div>
+<!-- Blog Post 6 -->
+<div class="blog-standard__single wow fadeInUp" data-wow-delay="600ms" style="margin-top: 40px;">
+<div class="row align-items-center">
+<div class="col-xl-7 col-lg-7">
+<div class="blog-standard__content" style="padding: 30px;">
+<span class="stackly-badge">Sensitive Skin</span>
+<p style="color: var(--pureglow-gray); font-size: 14px; margin-bottom: 8px;"><i class="far fa-calendar-alt"></i> 22 Feb, 2026  |  By Elena Morales</p>
+<h2 style="font-size: 26px; line-height: 1.3; font-family: var(--pureglow-font-two);"><a href="contact.html">Why Clean Clinical Formulation Matters for Reactive Skin</a></h2>
+<p style="color: var(--pureglow-gray); margin-top: 12px; line-height: 1.6;">How avoiding hidden allergens and synthetic penetration enhancers allows compromised skin to recover its natural resilience without recurring flare-ups.</p>
+<div style="margin-top: 15px;"><a class="thm-btn" href="404.html">Read Article <span class="fas fa-arrow-right"></span></a></div>
+</div>
+</div>
+<div class="col-xl-5 col-lg-5">
+<img alt="" src="images/feature-1-1.jpg" style="border-radius: 12px; width: 100%; object-fit: cover; max-height: 280px;"/>
+</div>
+</div>
+</div>
+<!-- Blog Post 7 -->
+<div class="blog-standard__single wow fadeInUp" data-wow-delay="700ms" style="margin-top: 40px;">
+<div class="row align-items-center">
+<div class="col-xl-7 col-lg-7">
+<div class="blog-standard__content" style="padding: 30px;">
+<span class="stackly-badge stackly-badge--mint">Hydration Protocols</span>
+<p style="color: var(--pureglow-gray); font-size: 14px; margin-bottom: 8px;"><i class="far fa-calendar-alt"></i> 26 Feb, 2026  |  By Sofia Rossi</p>
+<h2 style="font-size: 26px; line-height: 1.3; font-family: var(--pureglow-font-two);"><a href="contact.html">Seasonal Skin Survival: How to Maintain Radiant Hydration All Year</a></h2>
+<p style="color: var(--pureglow-gray); margin-top: 12px; line-height: 1.6;">Transitioning your humectants and lipid ratios as outdoor humidity and indoor heating shift throughout the seasons.</p>
+<div style="margin-top: 15px;"><a class="thm-btn" href="404.html">Read Article <span class="fas fa-arrow-right"></span></a></div>
+</div>
+</div>
+<div class="col-xl-5 col-lg-5">
+<img alt="" src="images/feature-1-2.jpg" style="border-radius: 12px; width: 100%; object-fit: cover; max-height: 280px;"/>
+</div>
+</div>
+</div>
+<!-- 5-Minute Skincare Diagnostic Quiz Start -->
+<section style="padding: 70px 0; background: var(--pureglow-primary); margin-top: 80px;">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-xl-8 col-lg-8">
+<span class="stackly-badge">Personalized Assessment</span>
+<h2 style="font-family: var(--pureglow-font-two); font-size: 32px; color: var(--pureglow-black); margin-top: 10px;">Find Your Custom 5-Step Clinical Regimen</h2>
+<p style="color: var(--pureglow-gray); margin-top: 10px;">Take our 5-minute diagnostic skin assessment created by board dermatologists to uncover your exact active ingredient pairings.</p>
+</div>
+<div class="col-xl-4 col-lg-4 text-lg-end mt-4 mt-lg-0">
+<a class="thm-btn" href="404.html">Start Free Skin Quiz <span class="fas fa-arrow-right"></span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- 5-Minute Skincare Diagnostic Quiz End -->
+<!--Site Footer Start-->
+<footer class="site-footer">
+            <div class="site-footer__top">
+                <div class="container">
+                    <div class="site-footer__top-inner">
+                        <div class="row">
+                            <div class="col-xl-4 wow fadeInUp" data-wow-delay="100ms">
+                                <div class="footer-widget__about">
+                                    <div class="footer-widget__about-logo"><a href="index.html"><img src="images/logo-stackly.png" alt="Stackly" style="max-height: 32px; width: auto; filter: brightness(0) invert(1);"></a></div>
+                                    <p class="footer-widget__about-text">We provide a range of professional skincare
+                                        <br> treatments designed to improve your skinâ€™s <br> health and natural beauty.
+                                    </p>
+                                    <div class="footer-widget__newsletter-form-box">
+                                        <form class="footer-widget__newsletter-form" action="404.html" method="POST" onsubmit="window.location.href='404.html'; return false;" novalidate="novalidate">
+                                            <div class="footer-widget__newsletter-form-input-box">
+                                                <input type="email" placeholder="Your Email address" name="email">
+                                            </div>
+                                            <button type="submit" class="footer-widget__newsletter-btn" onclick="window.location.href='404.html'; return false;" aria-label="Send">
+                                                <span><i class="icon-paper-plane"></i></span>
+                                            </button>
+                                            <div class="result"></div>
+                                        </form>
+                                    </div>
+                                    <div class="footer-widget__social">
+                                        <a href="404.html" title="Facebook"><span class="fab fa-facebook-f"></span></a>
+                                        <a href="404.html" title="Twitter"><span class="fab fa-twitter"></span></a>
+                                        <a href="404.html" title="Instagram"><span class="fab fa-instagram"></span></a>
+                                        <a href="404.html" title="Pinterest"><span class="fab fa-pinterest-p"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-8">
+                                <div class="site-footer__top-right">
+                                    <div class="site-footer__top-right-top">
+                                        <div class="site-footer__contact-info">
+                                            <ul class="site-footer__contact-info-list">
+                                                <li>
+                                                    <div class="icon-box">
+                                                        <span class="icon-telephone"></span>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h3>Urgent Support?</h3>
+                                                        <p>+1 (246) 333-099</p>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="icon-box">
+                                                        <span class="icon-email"></span>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h3>Send us a Mail</h3>
+                                                        <p>info@domain.com</p>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="icon-box">
+                                                        <span class="icon-clock"></span>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h3>Opening Time</h3>
+                                                        <p>Mon -Sat: 10:00 - 17:00</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                                            <div class="footer-widget__links">
+                                                <h4 class="footer-widget__title">Quick links</h4>
+                                                <ul class="footer-widget__links-list list-unstyled">
+                                                    <li><span class="icon-chevron"></span><a href="index.html">Home</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="about.html">About
+                                                            Us</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="services.html">Our
+                                                            Services</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="products.html">Products</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="blog.html">Latest
+                                                            Blog</a></li>
+                                                    <li><span class="icon-chevron"></span><a href="contact.html">Contact
+                                                            Us</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                                            <div class="footer-widget__links services">
+                                                <h4 class="footer-widget__title">Our Services</h4>
+                                                <ul class="footer-widget__links-list list-unstyled">
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Facial
+                                                            Treatment</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Skin
+                                                            Hydration </a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="services.html">Our
+                                                            Services</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Anti-Aging
+                                                            Care</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Acne
+                                                            Treatment</a></li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Skin
+                                                            Rejuvenation</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                                            <div class="footer-widget__recent-posts">
+                                                <h3 class="footer-widget__title">Recent Posts</h3>
+                                                <ul class="footer-widget__recent-posts-list">
+                                                    <li>
+                                                        <div class="footer-widget__recent-posts-content">
+                                                            <p><span class="icon-calendar"></span> 10 Jan,2026</p>
+                                                            <h4><a href="404.html">Natural Skincare Tips <br>
+                                                                    for a Radiant Glow</a></h4>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="footer-widget__recent-posts-content">
+                                                            <p><span class="icon-calendar"></span> 10 Jan,2026</p>
+                                                            <h4><a href="404.html">Easy Skincare Routines <br>
+                                                                    for Busy Lifestyles</a></h4>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <div class="site-footer__copyright">
+                                    <p class="site-footer__copyright-text">Â© 2026 <a href="index.html">Stackly</a>. All
+                                        Rights Reserved.</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer End-->
+
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box"><a href="index.html" aria-label="logo image"><img src="images/logo-stackly.png" width="150" alt="Stackly" style="max-height: 48px; width: auto;"></a></div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:needhelp@packageName__.com">needhelp@stackly.com</a>
+                </li>
+                <li>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:666-888-0000">666 888 0000</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+
+
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <!-- Search Popup -->
+    <div class="search-popup">
+        <div class="color-layer"></div>
+        <button class="close-search"><span class="far fa-times fa-fw"></span></button>
+        <form method="post" action="blog.html">
+            <div class="form-group">
+                <input type="search" name="search-field" value="" placeholder="Search Here" required="">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+    <!-- End Search Popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+        <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
+        <span class="scroll-to-top__text"> Go Back Top</span>
+    </a>
+    <!-- All Bundled JS -->
+    <script src="js/script.js?v=2.4"></script>
+    <script src="js/auth.js?v=2.4"></script>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register || Stackly Portal</title>
+    <!-- Favicon removed -->
+    <link rel="icon" href="data:,">
+<!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <!-- Bundled CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Custom Auth & Dashboard CSS -->
+    <link rel="stylesheet" href="css/custom-auth-dashboard.css?v=2.4">
+</head>
+
+<body class="auth-page-body">
+
+    <div class="auth-card">
+        <div class="auth-header">
+            <a href="index.html" class="auth-logo">
+                <img src="images/logo-stackly.png" alt="Stackly" style="max-height: 46px; width: auto;">
+            </a>
+            <h2>Create Account</h2>
+            <p>Join the Stackly platform and choose your access role.</p>
+        </div>
+
+        <form id="registerForm" novalidate>
+            <!-- 3 Roles Selection -->
+            <label class="role-selector-title">
+                <i class="fas fa-id-badge"></i> Choose Account Role:
+            </label>
+            <div class="role-selector-grid">
+                <!-- Role 1: Admin -->
+                <input type="radio" name="portalRole" id="regRoleAdmin" value="admin" class="role-card-radio">
+                <label for="regRoleAdmin" class="role-card-label">
+                    <i class="fas fa-shield-alt role-icon"></i>
+                    <span class="role-name">Super Admin</span>
+                    <span class="role-desc">Full System</span>
+                </label>
+
+                <!-- Role 2: Manager -->
+                <input type="radio" name="portalRole" id="regRoleManager" value="manager" class="role-card-radio">
+                <label for="regRoleManager" class="role-card-label">
+                    <i class="fas fa-user-tie role-icon"></i>
+                    <span class="role-name">Manager</span>
+                    <span class="role-desc">Operations</span>
+                </label>
+
+                <!-- Role 3: User -->
+                <input type="radio" name="portalRole" id="regRoleUser" value="user" class="role-card-radio" checked>
+                <label for="regRoleUser" class="role-card-label">
+                    <i class="fas fa-user-circle role-icon"></i>
+                    <span class="role-name">Client User</span>
+                    <span class="role-desc">Personal</span>
+                </label>
+            </div>
+
+            <!-- Full Name -->
+            <div class="auth-form-group">
+                <label class="auth-label" for="regName">Full Name</label>
+                <div class="auth-input-wrapper">
+                    <i class="fas fa-user auth-input-icon"></i>
+                    <input type="text" id="regName" class="auth-input" placeholder="e.g. Eleanor Vance" required autocomplete="name">
+                </div>
+            </div>
+
+            <!-- Email Input -->
+            <div class="auth-form-group">
+                <label class="auth-label" for="regEmail">Email Address</label>
+                <div class="auth-input-wrapper">
+                    <i class="fas fa-envelope auth-input-icon"></i>
+                    <input type="email" id="regEmail" class="auth-input" placeholder="e.g. name@example.com" required autocomplete="email">
+                </div>
+                <div class="auth-error-msg" id="regEmailErrorMsg">
+                    <i class="fas fa-exclamation-circle"></i> Please enter a valid email address.
+                </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="auth-form-group">
+                <label class="auth-label" for="regPassword">Password</label>
+                <div class="auth-input-wrapper">
+                    <i class="fas fa-lock auth-input-icon"></i>
+                    <input type="password" id="regPassword" class="auth-input" placeholder="Create a strong password" required autocomplete="new-password">
+                    <button type="button" class="auth-password-toggle" id="regPwdToggleBtn" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye" id="regPwdToggleIcon"></i>
+                    </button>
+                </div>
+                <div class="auth-error-msg" id="regPasswordErrorMsg">
+                    <i class="fas fa-exclamation-circle"></i> Please enter a password (minimum 6 characters).
+                </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="auth-form-group">
+                <label class="auth-label" for="regConfirmPassword">Confirm Password</label>
+                <div class="auth-input-wrapper">
+                    <i class="fas fa-check-double auth-input-icon"></i>
+                    <input type="password" id="regConfirmPassword" class="auth-input" placeholder="Re-enter your password" required autocomplete="new-password">
+                    <button type="button" class="auth-password-toggle" id="regConfirmPwdToggleBtn" aria-label="Toggle confirm password visibility">
+                        <i class="fas fa-eye" id="regConfirmPwdToggleIcon"></i>
+                    </button>
+                </div>
+                <div class="auth-error-msg" id="confirmErrorMsg">
+                    <i class="fas fa-exclamation-circle"></i> Passwords do not match.
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="auth-submit-btn" id="regSubmitBtn">
+                <span>Complete Registration & Go to Login</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </form>
+
+        <div class="auth-footer-links">
+            <p>Already have an account? <a href="login.html">Sign In Here</a></p>
+            <div>
+                <a href="index.html" class="auth-home-link">
+                    <i class="fas fa-home"></i> Return to Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Scripts -->
+    <script src="js/auth.js?v=2.4"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const nameInput = document.getElementById('regName');
+            const emailInput = document.getElementById('regEmail');
+            const passwordInput = document.getElementById('regPassword');
+            const confirmInput = document.getElementById('regConfirmPassword');
+            const pwdToggleBtn = document.getElementById('regPwdToggleBtn');
+            const pwdToggleIcon = document.getElementById('regPwdToggleIcon');
+            const confirmPwdToggleBtn = document.getElementById('regConfirmPwdToggleBtn');
+            const confirmPwdToggleIcon = document.getElementById('regConfirmPwdToggleIcon');
+            const registerForm = document.getElementById('registerForm');
+
+            const emailErrorMsg = document.getElementById('regEmailErrorMsg');
+            const passwordErrorMsg = document.getElementById('regPasswordErrorMsg');
+            const confirmErrorMsg = document.getElementById('confirmErrorMsg');
+
+            // Toggle Password Visibility
+            pwdToggleBtn.addEventListener('click', function () {
+                const isPassword = passwordInput.type === 'password';
+                passwordInput.type = isPassword ? 'text' : 'password';
+                pwdToggleIcon.className = isPassword ? 'fas fa-eye-slash' : 'fas fa-eye';
+            });
+
+            // Toggle Confirm Password Visibility
+            confirmPwdToggleBtn.addEventListener('click', function () {
+                const isPassword = confirmInput.type === 'password';
+                confirmInput.type = isPassword ? 'text' : 'password';
+                confirmPwdToggleIcon.className = isPassword ? 'fas fa-eye-slash' : 'fas fa-eye';
+            });
+
+            // Password Validation feedback
+            function evaluatePassword() {
+                const val = passwordInput.value;
+                const isValid = val.length >= 6;
+
+                if (val.length > 0) {
+                    if (isValid) {
+                        passwordInput.classList.remove('is-invalid');
+                        passwordInput.classList.add('is-valid');
+                        passwordErrorMsg.style.display = 'none';
+                    } else {
+                        passwordInput.classList.remove('is-valid');
+                    }
+                } else {
+                    passwordInput.classList.remove('is-valid', 'is-invalid');
+                    passwordErrorMsg.style.display = 'none';
+                }
+
+                return isValid;
+            }
+
+            passwordInput.addEventListener('input', function() {
+                evaluatePassword();
+                checkConfirmMatch();
+            });
+
+            confirmInput.addEventListener('input', checkConfirmMatch);
+
+            function checkConfirmMatch() {
+                if (confirmInput.value.length > 0) {
+                    if (confirmInput.value === passwordInput.value) {
+                        confirmInput.classList.remove('is-invalid');
+                        confirmInput.classList.add('is-valid');
+                        confirmErrorMsg.style.display = 'none';
+                        return true;
+                    } else {
+                        confirmInput.classList.add('is-invalid');
+                        confirmInput.classList.remove('is-valid');
+                        confirmErrorMsg.style.display = 'flex';
+                        return false;
+                    }
+                }
+                confirmInput.classList.remove('is-invalid', 'is-valid');
+                confirmErrorMsg.style.display = 'none';
+                return true;
+            }
+
+            emailInput.addEventListener('input', function () {
+                const val = emailInput.value.trim();
+                if (val.length > 0) {
+                    if (StacklyAuth.validateEmail(val)) {
+                        emailInput.classList.remove('is-invalid');
+                        emailInput.classList.add('is-valid');
+                        emailErrorMsg.style.display = 'none';
+                    } else {
+                        emailInput.classList.remove('is-valid');
+                    }
+                } else {
+                    emailInput.classList.remove('is-valid', 'is-invalid');
+                    emailErrorMsg.style.display = 'none';
+                }
+            });
+
+            registerForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const email = emailInput.value.trim();
+                const name = nameInput.value.trim() || email.split('@')[0];
+                const password = passwordInput.value;
+                const isEmailValid = StacklyAuth.validateEmail(email);
+                const isPasswordValid = evaluatePassword();
+                const isMatch = password === confirmInput.value;
+
+                let hasError = false;
+
+                if (!isEmailValid) {
+                    emailInput.classList.add('is-invalid');
+                    emailErrorMsg.style.display = 'flex';
+                    hasError = true;
+                }
+
+                if (!isPasswordValid) {
+                    passwordInput.classList.add('is-invalid');
+                    passwordErrorMsg.style.display = 'flex';
+                    hasError = true;
+                }
+
+                if (!isMatch) {
+                    confirmInput.classList.add('is-invalid');
+                    confirmErrorMsg.style.display = 'flex';
+                    hasError = true;
+                }
+
+                if (hasError) return;
+
+                const selectedRoleEl = document.querySelector('input[name="portalRole"]:checked');
+                const selectedRole = selectedRoleEl ? selectedRoleEl.value : 'user';
+
+                // Save registered credentials into localStorage
+                const registeredUsers = JSON.parse(localStorage.getItem('stackly_registered_users') || '[]');
+                registeredUsers.push({ email, name, role: selectedRole });
+                localStorage.setItem('stackly_registered_users', JSON.stringify(registeredUsers));
+
+                // Show Registration Successful alert
+                alert("Registration Successful!");
+
+                // Move to login page with pre-selected role & pre-filled email
+                window.location.href = `login.html?registered=true&role=${encodeURIComponent(selectedRole)}&email=${encodeURIComponent(email)}`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page Not Found || Stackly</title>
+    <!-- Favicon removed -->
+    <link rel="icon" href="data:,">
+<!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <!-- Bundled CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Custom Auth & Dashboard CSS -->
+    <link rel="stylesheet" href="css/custom-auth-dashboard.css?v=2.4">
+</head>
+
+<body class="error-page-wrapper">
+
+    <div class="error-content-box">
+        <a href="index.html" style="display: inline-block; margin-bottom: 25px;">
+            <img src="images/logo-stackly.png" alt="Stackly" style="max-height: 52px; width: auto; filter: brightness(0) invert(1);">
+        </a>
+
+        <div class="error-glitch-number">404</div>
+        <h2>Page Or Feature Not Found</h2>
+        <p>The dashboard action or page you clicked is currently undergoing scheduled maintenance or is unavailable. Please use the navigation below to return to your desired screen.</p>
+
+        <div class="error-actions-group">
+            <!-- 1. Return to Home: Navigates to index.html -->
+            <a href="index.html" class="error-btn error-btn-home" id="btnReturnHome">
+                <i class="fas fa-home"></i> Return to Home
+            </a>
+
+            <!-- 2. Return to Dashboard: Navigates to dashboard.html (Only shown when user is logged in) -->
+            <a href="dashboard.html" class="error-btn error-btn-dashboard" id="btnReturnDashboard" style="display: none;">
+                <i class="fas fa-th-large"></i> Return to Dashboard
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js?v=2.4"></script>
+    <script>
+        (function () {
+            function checkAuthForDashboardBtn() {
+                var user = (window.StacklyAuth && StacklyAuth.getCurrentUser) ? StacklyAuth.getCurrentUser() : null;
+                var btnDashboard = document.getElementById('btnReturnDashboard');
+                if (btnDashboard) {
+                    if (user) {
+                        btnDashboard.style.display = 'inline-flex';
+                    } else {
+                        btnDashboard.style.display = 'none';
+                    }
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', checkAuthForDashboardBtn);
+            window.addEventListener('load', checkAuthForDashboardBtn);
+            // Run immediately in case DOM is already ready
+            checkAuthForDashboardBtn();
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Products || Stackly </title>
+    <!-- Favicon removed -->
+    <link rel="icon" href="data:,">
+<meta name="description" content="Stackly " />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <!-- All Bundled CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-auth-dashboard.css?v=2.4">
+</head>
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+    <!--Start Preloader-->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!--End Preloader-->
+
+    <!-- Start sidebar widget content -->
+    <div class="xs-sidebar-group info-group info-sidebar">
+        <div class="xs-overlay xs-bg-black"></div>
+        <div class="xs-sidebar-widget">
+            <div class="sidebar-widget-container">
+                <div class="widget-heading">
+                    <a href="#" class="close-side-widget">X</a>
+                </div>
+                <div class="sidebar-textwidget">
+                    <div class="sidebar-info-contents">
+                        <div class="content-inner">
+                            <div class="logo"><a href="index.html"><img src="images/logo-stackly.png" alt="Stackly" style="max-height: 48px; width: auto;"></a></div>
+                            <div class="content-box">
+                                <h4>About Us</h4>
+                                <div class="inner-text">
+                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                                        roots in a piece of classical Latin literature from 45 BC, making it over
+                                        2000 years old.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-inner">
+                                <h4>Get a free quote</h4>
+                                <form action="assets/inc/sendemail.php" method="POST" class="contact-form-validated">
+                                    <div class="form-group">
+                                        <input type="text" name="name" placeholder="Name" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="Email" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="message" placeholder="Message..." required=""></textarea>
+                                    </div>
+                                    <div class="form-group message-btn">
+                                        <button class="thm-btn" data-text="Submit Now +" type="submit"
+                                            data-loading-text="Please wait...">Submit Now
+                                            <span class="fas fa-arrow-right"></span>
+                                        </button>
+                                    </div>
+                                    <div class="result"></div>
+                                </form>
+                            </div>
+
+                            <div class="sidebar-contact-info">
+                                <h4>Contact Info</h4>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <span class="icon-maps-and-flags"></span> 88 broklyn street, New York
+                                    </li>
+                                    <li>
+                                        <span class="icon-call"></span>
+                                        <a href="tel:123456789">+1 555-9990-153</a>
+                                    </li>
+                                    <li>
+                                        <span class="icon-email"></span>
+                                        <a href="mailto:info@example.com">info@example.com</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="thm-social-link1">
+                                <ul class="social-box list-unstyled">
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End sidebar widget content -->
+
+
+    <div class="page-wrapper">
+        <header class="main-header">
+            <nav class="main-menu">
+                <div class="main-menu__wrapper">
+                    <div class="main-menu__wrapper-inner">
+                        <div class="main-menu__left">
+                            <div class="main-menu__logo">
+                                <a href="index.html"><img src="images/logo-stackly.png" alt="Stackly" style="max-height: 48px; width: auto;"></a>
+                            </div>
+                        </div>
+                        <div class="main-menu__main-menu-box">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">About</a>
+                                </li>
+                                <li>
+                                    <a href="services.html">Services</a>
+                                </li>
+                                <li class="current">
+                                    <a href="products.html">Shop</a>
+                                </li>
+                                <li>
+                                    <a href="blog.html">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="main-menu__right">
+                            <div class="main-menu__call">
+                                <div class="main-menu__call-icon">
+                                    <i class="icon-telephone"></i>
+                                </div>
+                                <div class="main-menu__call-content">
+                                    <p class="main-menu__call-sub-title">Call Anytime</p>
+                                    <h5 class="main-menu__call-number"><a href="tel:9288006780">+92 ( 8800 ) - 6780</a></h5>
+                                </div>
+                            </div>
+                            <div class="main-menu__search-cart-box">
+                                <div class="main-menu__search-cart-box">
+                                    <div class="main-menu__search-box">
+                                        <a href="#" class="main-menu__search searcher-toggler-box fal fa-search"></a>
+                                    </div>
+                                    <div class="main-menu__cart-box">
+                                        <a href="cart.html" class="main-menu__cart">
+                                            <span class="fal fa-shopping-cart"></span>
+                                            <span class="main-menu__cart-count">02</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-menu__nav-sidebar-icon">
+                                <a class="navSidebar-button" href="#">
+                                    <span class="icon-dots-menu-one"></span>
+                                    <span class="icon-dots-menu-two"></span>
+                                    <span class="icon-dots-menu-three"></span>
+                                </a>
+                            </div>
+                            <div class="main-menu__btn-box auth-nav-box" id="authNavBox">
+                                <div class="auth-nav-group guest-nav-actions" id="guestNavActions">
+                                    <a class="thm-btn auth-nav-btn auth-nav-btn-login" href="login.html" id="navLoginBtn">
+                                        <span>Login</span>
+                                        <i class="fas fa-sign-in-alt"></i>
+                                    </a>
+                                    <a class="thm-btn auth-nav-btn auth-nav-btn-register" href="register.html" id="navRegisterBtn">
+                                        <span>Register</span>
+                                        <i class="fas fa-user-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="auth-nav-group user-nav-actions" id="userNavActions" style="display: none;">
+                                    <a class="thm-btn auth-nav-btn auth-nav-btn-dashboard" href="dashboard.html" id="navDashboardBtn">
+                                        <i class="fas fa-th-large"></i>
+                                        <span>Dashboard</span>
+                                    </a>
+                                    <button type="button" class="auth-nav-logout-btn" title="Logout" aria-label="Logout">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+<!--Page Header Start-->
+<section class="page-header">
+<div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);">
+</div>
+<div class="shape1 float-bob-y"><img alt="" src="assets/images/shapes/page-header-shape1.png"/></div>
+<div class="shape2 float-bob-y"><img alt="" src="assets/images/shapes/page-header-shape2.png"/></div>
+<div class="container">
+<div class="page-header__inner">
+<h2>Products</h2>
+<div class="thm-breadcrumb__inner">
+<ul class="thm-breadcrumb">
+<li><a href="index.html">Home</a></li>
+<li><span>//</span></li>
+<li>Products</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!--Page Header End-->
+<!--Product Start-->
+<section class="product">
+<div class="container">
+<div class="row">
+<div class="col-xl-9 col-lg-12">
+<div class="product__items">
+<div class="row">
+<div class="col-xl-12">
+<div class="product__showing-result">
+<div class="product__showing-text-box">
+<p class="product__showing-text">Showing 1â€“12/14 of 14 results</p>
+</div>
+<div class="product__showing-sort">
+<div class="select-box">
+<select class="wide">
+<option data-display="Sort by popular">Sort by popular</option>
+<option value="1">Sort by popular</option>
+<option value="2">Sort by Price</option>
+<option value="3">Sort by Ratings</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="product__all">
+<div class="product__all-tab">
+<div class="product__all-tab-button">
+<ul class="tabs-button-box clearfix">
+<li class="tab-btn-item active-btn-item" data-tab="#grid">
+<div class="product__all-tab-button-icon one">
+<i class="fa fa-solid fa-bars"></i>
+</div>
+</li>
+<li class="tab-btn-item" data-tab="#list">
+<div class="product__all-tab-button-icon">
+<i class="fa fa-solid fa-list-ul"></i>
+</div>
+</li>
+</ul>
+</div>
+<!--Start Tabs Content Box-->
+<div class="tabs-content-box">
+<!--Start Tab-->
+<div class="tab-content-box-item tab-content-box-item-active" id="grid">
+<div class="product__all-tab-content-box-item">
+<div class="product__all-tab-single">
+<div class="row">
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-1.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-1.jpg"/>
+<ul class="single-product-style1__overlay">
+<li>
+<p>New</p>
+</li>
+</ul>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Soft Lips Night Balm
+                                                                            </a>
+</h4>
+<p>$33.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>4.9</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-2.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-2.jpg"/>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Pure Skin Cleanser
+                                                                            </a>
+</h4>
+<p>$50.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>5.0</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-3.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-3.jpg"/>
+<ul class="single-product-style1__overlay">
+<li>
+<p>5% Off</p>
+</li>
+</ul>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Natural Glow Cream
+                                                                            </a>
+</h4>
+<p><del>$33.00</del> $28.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>4.5</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-4.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-4.jpg"/>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Skin Care Cream
+                                                                            </a>
+</h4>
+<p>$40.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>4.8</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-5.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-5.jpg"/>
+<ul class="single-product-style1__overlay">
+<li>
+<p>5% Off</p>
+</li>
+</ul>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Face Cream Jar
+                                                                            </a>
+</h4>
+<p><del>$25.00</del>$20.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>4.9</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-6.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-6.jpg"/>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Splash Serum Bottle
+                                                                            </a>
+</h4>
+<p>$35.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>4.7</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-7.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-7.jpg"/>
+<ul class="single-product-style1__overlay">
+<li>
+<p>New</p>
+</li>
+</ul>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Monica Cleansing Foam
+                                                                            </a>
+</h4>
+<p>$27.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>4.6</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-8.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-8.jpg"/>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Velvet Matte Lipstick
+                                                                            </a>
+</h4>
+<p>$44.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>5.0</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-9.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-9.jpg"/>
+<ul class="single-product-style1__overlay">
+<li>
+<p>3% Off</p>
+</li>
+</ul>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Hydrating Skin Care Set
+                                                                            </a>
+</h4>
+<p><del>$49.00</del>$52.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>4.9</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-10.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-10.jpg"/>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Rose Glow Face Cream
+                                                                            </a>
+</h4>
+<p>$25.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>4.7</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-11.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-11.jpg"/>
+<ul class="single-product-style1__overlay">
+<li>
+<p>New</p>
+</li>
+<li>
+<p>7% Off</p>
+</li>
+</ul>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Vitamin C Serum
+                                                                            </a>
+</h4>
+<p><del>$36.00</del>$43.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>4.9</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+<!--Product All Single Start-->
+<div class="col-xl-4 col-lg-6 col-md-6">
+<div class="single-product-style1">
+<div class="single-product-style1__img">
+<img alt="" src="assets/images/shop/shop-product-1-12.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-1-12.jpg"/>
+<ul class="single-product-style1__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye"></i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="single-product-style1__content">
+<div class="single-product-style1__content-left">
+<h4>
+<a href="404.html">
+                                                                                Deep Moisture Cream
+                                                                            </a>
+</h4>
+<p>$28.00</p>
+</div>
+<div class="single-product-style1__content-right">
+<div class="single-product-style1__review">
+<i class="fa fa-star"></i>
+<p>4.6</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single End-->
+</div>
+</div>
+</div>
+</div>
+<!--End Tab-->
+<!--Start Tab-->
+<div class="tab-content-box-item" id="list">
+<div class="product__all-tab-content-box-item">
+<div class="product__all-tab-single">
+<div class="row">
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-1.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-1.jpg"/>
+<ul class="single-product-style1__overlay">
+<li>
+<p>New</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Soft Lips Night Balm
+                                                                                    </a>
+</h4>
+<p>$33.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-2.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-2.jpg"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Pure Skin Cleanser
+                                                                                    </a>
+</h4>
+<p>$50.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-3.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-3.jpg"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Natural Glow Cream
+                                                                                    </a>
+</h4>
+<p>$40.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-4.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-4.jpg"/>
+</div>
+<ul class="single-product-style1__overlay">
+<li>
+<p>5% Off</p>
+</li>
+</ul>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Skin Care Cream
+                                                                                    </a>
+</h4>
+<p><del>$33.00</del>$28.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-5.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-5.jpg"/>
+</div>
+<ul class="single-product-style1__overlay">
+<li>
+<p>5% Off</p>
+</li>
+</ul>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Face Cream Jar
+                                                                                    </a>
+</h4>
+<p><del>$25.00</del>$20.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-6.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-6.jpg"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Splash Serum Bottle
+                                                                                    </a>
+</h4>
+<p>$35.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-7.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-7.jpg"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Monica Cleansing Foam
+                                                                                    </a>
+</h4>
+<p>$44.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-8.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-8.jpg"/>
+<ul class="single-product-style1__overlay">
+<li>
+<p>New</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Velvet Matte Lipstick
+                                                                                    </a>
+</h4>
+<p>$27.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-9.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-9.jpg"/>
+<ul class="single-product-style1__overlay">
+<li>
+<p>3% Off</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Hydrating Skin Care Set
+                                                                                    </a>
+</h4>
+<p><del>$49.00</del>$52.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-10.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-10.jpg"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Rose Glow Face Cream
+                                                                                    </a>
+</h4>
+<p><del>$33.00</del>$28.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-11.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-11.jpg"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Vitamin C Serum
+                                                                                    </a>
+</h4>
+<p>$40.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-12.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-12.jpg"/>
+</div>
+<ul class="single-product-style1__overlay">
+<li>
+<p>New</p>
+</li>
+<li>
+<p>7% Off</p>
+</li>
+</ul>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Deep Moisture Cream
+                                                                                    </a>
+</h4>
+<p><del>$36.00</del>$43.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-1.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-1.jpg"/>
+<ul class="single-product-style1__overlay">
+<li>
+<p>New</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Soft Lips Night Balm
+                                                                                    </a>
+</h4>
+<p>$55.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+<!--Product All Single Start-->
+<div class="col-xl-6 col-lg-6">
+<div class="single-product-style2">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__img">
+<img alt="" src="assets/images/shop/shop-product-2-2.jpg"/>
+<img alt="" src="assets/images/shop/shop-product-2-2.jpg"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="single-product-style2__content">
+<div class="single-product-style2__review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+</div>
+<div class="single-product-style2__text">
+<h4>
+<a href="404.html">
+                                                                                        Pure Skin Cleanser
+                                                                                    </a>
+</h4>
+<p>$80.00</p>
+</div>
+<ul class="single-product-style2__info">
+<li>
+<a href="404.html" title="Add to Wishlist">
+<i class="fa fa-regular fa-heart">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Add to cart">
+<i class="fa fa-solid fa-cart-plus">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Quick View">
+<i class="fa fa-regular fa-eye">
+</i>
+</a>
+</li>
+<li>
+<a href="404.html" title="Compare">
+<i class="fa fa-solid fa-repeat">
+</i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--Product All Single Start-->
+</div>
+</div>
+</div>
+</div>
+<!--End Tab-->
+</div>
+<!--End Tabs Content Box-->
+</div>
+<ul class="styled-pagination text-center clearfix list-unstyled">
+<li class="arrow prev active">
+<a href="404.html">
+<span class="fas fa-angle-left"></span>
+</a>
+</li>
+<li><a href="404.html">1</a></li>
+<li><a href="404.html">2</a></li>
+<li><a href="404.html">3</a></li>
+<li class="arrow next">
+<a href="404.html">
+<span class="fas fa-angle-right"></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-lg-12">
+<div class="product__sidebar">
+<div class="shop-search product__sidebar-single">
+<form action="404.html">
+<input placeholder="Search" type="text"/>
+<button onclick="window.location.href='404.html'; return false;" type="submit"><i class="fa fa-search"></i></button>
+</form>
+</div>
+<div class="product__price-ranger product__sidebar-single">
+<h3 class="product__sidebar-title">Price</h3>
+<div class="price-ranger">
+<div id="slider-range"></div>
+<div class="ranger-min-max-block">
+<input class="min" readonly="" type="text"/>
+<span>-</span>
+<input class="max" readonly="" type="text"/>
+<input type="submit" value="Filter"/>
+</div>
+</div>
+</div>
+<div class="shop-category product__sidebar-single">
+<h3 class="product__sidebar-title">Categories</h3>
+<ul class="list-unstyled">
+<li><a href="#">Facial Cleansers</a></li>
+<li class="active"><a href="#">Glow Serums</a></li>
+<li><a href="#">Face Moisturizers</a></li>
+<li><a href="#">Lip Treatments</a></li>
+<li><a href="#">Night Care</a></li>
+</ul>
+</div>
+<div class="shop-product-recent-products product__sidebar-single">
+<h3 class="product__sidebar-title">Recent Products</h3>
+<ul class="clearfix list-unstyled">
+<li>
+<div class="img">
+<img alt="Product" src="assets/images/shop/product-thumb-1.jpg"/>
+<a href="#"><i aria-hidden="true" class="fa fa-link"></i></a>
+</div>
+<div class="content">
+<div class="title">
+<h5><a href="#">Soft Lips Night Balm</a></h5>
+</div>
+<div class="price">
+<p>$33.00</p>
+</div>
+<div class="review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star color"></i>
+</div>
+</div>
+</li>
+<li>
+<div class="img">
+<img alt="Product" src="assets/images/shop/product-thumb-2.jpg"/>
+<a href="#"><i aria-hidden="true" class="fa fa-link"></i></a>
+</div>
+<div class="content">
+<div class="title">
+<h5><a href="#">Pure Skin Cleanser</a></h5>
+</div>
+<div class="price">
+<p>$39.00</p>
+</div>
+<div class="review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star color"></i>
+</div>
+</div>
+</li>
+<li>
+<div class="img">
+<img alt="Product" src="assets/images/shop/product-thumb-3.jpg"/>
+<a href="#"><i aria-hidden="true" class="fa fa-link"></i></a>
+</div>
+<div class="content">
+<div class="title">
+<h5><a href="#">Natural Glow Cream</a></h5>
+</div>
+<div class="price">
+<p>$54.00</p>
+</div>
+<div class="review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star color"></i>
+</div>
+</div>
+</li>
+<li>
+<div class="img">
+<img alt="Product" src="assets/images/shop/product-thumb-4.jpg"/>
+<a href="#"><i aria-hidden="true" class="fa fa-link"></i></a>
+</div>
+<div class="content">
+<div class="title">
+<h5><a href="#">Vitamin C Serum</a></h5>
+</div>
+<div class="price">
+<p>$44.00</p>
+</div>
+<div class="review">
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star"></i>
+<i class="fa fa-star color"></i>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="shop-product-tags product__sidebar-single">
+<h3 class="product__sidebar-title">Product Tags</h3>
+<div class="shop-product__tags-list">
+<a href="#">Skincare</a>
+<a href="#">Face Wash</a>
+<a href="#">Moisturizer</a>
+<a href="#">Serum</a>
+<a href="#">Sunscreen</a>
+<a href="#">Acne Care</a>
+</div>
+</div>
+<!--Start Products Style1 Single Sidear -->
+
+<!--End Products Style1 Single Sidear -->
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--Product End-->
+<!-- 5 Key Bio-Active Actives Spotlight Start -->
+<section style="padding: 90px 0; background: var(--pureglow-primary);">
+<div class="container">
+<div class="section-title text-center sec-title-animation animation-style1">
+<div class="section-title__tagline-box">
+<p class="section-title__tagline">Formulation Integrity</p>
+<div class="section-title__tagline-shape"></div>
+</div>
+<h2 class="section-title__title title-animation">5 Bio-Active Hero Compounds</h2>
+<p style="max-width: 650px; margin: 15px auto 0; color: var(--pureglow-gray);">Clinically targeted ingredients included at high therapeutic concentrations in Stackly skincare.</p>
+</div>
+<div class="row gutter-y-30" style="margin-top: 40px;">
+<div class="col-xl-4 col-lg-4 col-md-6">
+<div class="stackly-card text-center">
+<span class="stackly-badge">Concentration: 2.5%</span>
+<h3 class="stackly-card__title">Multi-Weight Hyaluronic Acid</h3>
+<p class="stackly-card__text">Triple molecular weight formulation delivering hydration simultaneously to the surface, epidermis, and dermal reservoir.</p>
+</div>
+</div>
+<div class="col-xl-4 col-lg-4 col-md-6">
+<div class="stackly-card text-center">
+<span class="stackly-badge">Concentration: 5.0%</span>
+<h3 class="stackly-card__title">Clinical Niacinamide (B3)</h3>
+<p class="stackly-card__text">Stabilizes sebum production, minimizes enlarged pore circumference, and fades stubborn post-inflammatory erythema.</p>
+</div>
+</div>
+<div class="col-xl-4 col-lg-4 col-md-6">
+<div class="stackly-card text-center">
+<span class="stackly-badge">Concentration: 1.5%</span>
+<h3 class="stackly-card__title">Botanical Bakuchiol</h3>
+<p class="stackly-card__text">Natural phyto-retinol equivalent stimulating cellular turnover and collagen synthesis with zero flaking or UV sensitivity.</p>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="stackly-card text-center">
+<span class="stackly-badge">Concentration: 3.0%</span>
+<h3 class="stackly-card__title">Bio-Fermented Centella Asiatica</h3>
+<p class="stackly-card__text">High-potency triterpene madecassoside that quenches dermal micro-inflammation and speeds wound re-epithelialization.</p>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="stackly-card text-center">
+<span class="stackly-badge">Concentration: 4.0%</span>
+<h3 class="stackly-card__title">Marine Signal Tri-Peptides</h3>
+<p class="stackly-card__text">Synthetic biomimetic messengers instructing fibroblasts to replenish collagen type I, III, and hyaluronic polymers.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5 Key Bio-Active Actives Spotlight End -->
+<!--Site Footer Start-->
+<footer class="site-footer">
+            <div class="site-footer__top">
+                <div class="container">
+                    <div class="site-footer__top-inner">
+                        <div class="row">
+                            <div class="col-xl-4 wow fadeInUp" data-wow-delay="100ms">
+                                <div class="footer-widget__about">
+                                    <div class="footer-widget__about-logo"><a href="index.html"><img src="images/logo-stackly.png" alt="Stackly" style="max-height: 32px; width: auto; filter: brightness(0) invert(1);"></a></div>
+                                    <p class="footer-widget__about-text">We provide a range of professional skincare
+                                        <br> treatments designed to improve your skinâ€™s <br> health and natural beauty.
+                                    </p>
+                                    <div class="footer-widget__newsletter-form-box">
+                                        <form class="footer-widget__newsletter-form" action="404.html" method="POST" onsubmit="window.location.href='404.html'; return false;" novalidate="novalidate">
+                                            <div class="footer-widget__newsletter-form-input-box">
+                                                <input type="email" placeholder="Your Email address" name="email">
+                                            </div>
+                                            <button type="submit" class="footer-widget__newsletter-btn" onclick="window.location.href='404.html'; return false;" aria-label="Send">
+                                                <span><i class="icon-paper-plane"></i></span>
+                                            </button>
+                                            <div class="result"></div>
+                                        </form>
+                                    </div>
+                                    <div class="footer-widget__social">
+                                        <a href="404.html" title="Facebook"><span class="fab fa-facebook-f"></span></a>
+                                        <a href="404.html" title="Twitter"><span class="fab fa-twitter"></span></a>
+                                        <a href="404.html" title="Instagram"><span class="fab fa-instagram"></span></a>
+                                        <a href="404.html" title="Pinterest"><span class="fab fa-pinterest-p"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-8">
+                                <div class="site-footer__top-right">
+                                    <div class="site-footer__top-right-top">
+                                        <div class="site-footer__contact-info">
+                                            <ul class="site-footer__contact-info-list">
+                                                <li>
+                                                    <div class="icon-box">
+                                                        <span class="icon-telephone"></span>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h3>Urgent Support?</h3>
+                                                        <p>+1 (246) 333-099</p>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="icon-box">
+                                                        <span class="icon-email"></span>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h3>Send us a Mail</h3>
+                                                        <p>info@domain.com</p>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="icon-box">
+                                                        <span class="icon-clock"></span>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h3>Opening Time</h3>
+                                                        <p>Mon -Sat: 10:00 - 17:00</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                                            <div class="footer-widget__links">
+                                                <h4 class="footer-widget__title">Quick links</h4>
+                                                <ul class="footer-widget__links-list list-unstyled">
+                                                    <li><span class="icon-chevron"></span><a href="index.html">Home</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="about.html">About
+                                                            Us</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="services.html">Our
+                                                            Services</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="products.html">Products</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="blog.html">Latest
+                                                            Blog</a></li>
+                                                    <li><span class="icon-chevron"></span><a href="contact.html">Contact
+                                                            Us</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                                            <div class="footer-widget__links services">
+                                                <h4 class="footer-widget__title">Our Services</h4>
+                                                <ul class="footer-widget__links-list list-unstyled">
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Facial
+                                                            Treatment</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Skin
+                                                            Hydration </a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="services.html">Our
+                                                            Services</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Anti-Aging
+                                                            Care</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Acne
+                                                            Treatment</a></li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Skin
+                                                            Rejuvenation</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                                            <div class="footer-widget__recent-posts">
+                                                <h3 class="footer-widget__title">Recent Posts</h3>
+                                                <ul class="footer-widget__recent-posts-list">
+                                                    <li>
+                                                        <div class="footer-widget__recent-posts-content">
+                                                            <p><span class="icon-calendar"></span> 10 Jan,2026</p>
+                                                            <h4><a href="404.html">Natural Skincare Tips <br>
+                                                                    for a Radiant Glow</a></h4>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="footer-widget__recent-posts-content">
+                                                            <p><span class="icon-calendar"></span> 10 Jan,2026</p>
+                                                            <h4><a href="404.html">Easy Skincare Routines <br>
+                                                                    for Busy Lifestyles</a></h4>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <div class="site-footer__copyright">
+                                    <p class="site-footer__copyright-text">Â© 2026 <a href="index.html">Stackly</a>. All
+                                        Rights Reserved.</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer End-->
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box"><a href="index.html" aria-label="logo image"><img src="images/logo-stackly.png" width="150" alt="Stackly" style="max-height: 48px; width: auto;"></a></div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:needhelp@packageName__.com">needhelp@stackly.com</a>
+                </li>
+                <li>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:666-888-0000">666 888 0000</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+
+
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <!-- Search Popup -->
+    <div class="search-popup">
+        <div class="color-layer"></div>
+        <button class="close-search"><span class="far fa-times fa-fw"></span></button>
+        <form method="post" action="blog.html">
+            <div class="form-group">
+                <input type="search" name="search-field" value="" placeholder="Search Here" required="">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+    <!-- End Search Popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+        <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
+        <span class="scroll-to-top__text"> Go Back Top</span>
+    </a>
+    <!-- All Bundled JS -->
+    <script src="js/script.js?v=2.4"></script>
+    <script src="js/auth.js?v=2.4"></script>
+</body>
+
+</html>

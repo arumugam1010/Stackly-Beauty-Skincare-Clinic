@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Contact Us || Stackly </title>
+    <!-- Favicon removed -->
+    <link rel="icon" href="data:,">
+<meta name="description" content="Stackly " />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+    <!-- All Bundled CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-auth-dashboard.css?v=2.4">
+</head>
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+    <!--Start Preloader-->
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!--End Preloader-->
+
+
+
+    <!-- Start sidebar widget content -->
+    <div class="xs-sidebar-group info-group info-sidebar">
+        <div class="xs-overlay xs-bg-black"></div>
+        <div class="xs-sidebar-widget">
+            <div class="sidebar-widget-container">
+                <div class="widget-heading">
+                    <a href="#" class="close-side-widget">X</a>
+                </div>
+                <div class="sidebar-textwidget">
+                    <div class="sidebar-info-contents">
+                        <div class="content-inner">
+                            <div class="logo"><a href="index.html"><img src="images/logo-stackly.png" alt="Stackly" style="max-height: 48px; width: auto;"></a></div>
+                            <div class="content-box">
+                                <h4>About Us</h4>
+                                <div class="inner-text">
+                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                                        roots in a piece of classical Latin literature from 45 BC, making it over
+                                        2000 years old.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="form-inner">
+                                <h4>Get a free quote</h4>
+                                <form action="assets/inc/sendemail.php" method="POST" class="contact-form-validated">
+                                    <div class="form-group">
+                                        <input type="text" name="name" placeholder="Name" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="Email" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="message" placeholder="Message..." required=""></textarea>
+                                    </div>
+                                    <div class="form-group message-btn">
+                                        <button class="thm-btn" data-text="Submit Now +" type="submit"
+                                            data-loading-text="Please wait...">Submit Now
+                                            <span class="fas fa-arrow-right"></span>
+                                        </button>
+                                    </div>
+                                    <div class="result"></div>
+                                </form>
+                            </div>
+
+                            <div class="sidebar-contact-info">
+                                <h4>Contact Info</h4>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <span class="icon-maps-and-flags"></span> 88 broklyn street, New York
+                                    </li>
+                                    <li>
+                                        <span class="icon-call"></span>
+                                        <a href="tel:123456789">+1 555-9990-153</a>
+                                    </li>
+                                    <li>
+                                        <span class="icon-email"></span>
+                                        <a href="mailto:info@example.com">info@example.com</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="thm-social-link1">
+                                <ul class="social-box list-unstyled">
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End sidebar widget content -->
+
+
+    <div class="page-wrapper">
+        <header class="main-header">
+            <nav class="main-menu">
+                <div class="main-menu__wrapper">
+                    <div class="main-menu__wrapper-inner">
+                        <div class="main-menu__left">
+                            <div class="main-menu__logo">
+                                <a href="index.html"><img src="images/logo-stackly.png" alt="Stackly" style="max-height: 48px; width: auto;"></a>
+                            </div>
+                        </div>
+                        <div class="main-menu__main-menu-box">
+                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                            <ul class="main-menu__list">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">About</a>
+                                </li>
+                                <li>
+                                    <a href="services.html">Services</a>
+                                </li>
+                                <li>
+                                    <a href="products.html">Shop</a>
+                                </li>
+                                <li>
+                                    <a href="blog.html">Blog</a>
+                                </li>
+                                <li class="current">
+                                    <a href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="main-menu__right">
+                            <div class="main-menu__call">
+                                <div class="main-menu__call-icon">
+                                    <i class="icon-telephone"></i>
+                                </div>
+                                <div class="main-menu__call-content">
+                                    <p class="main-menu__call-sub-title">Call Anytime</p>
+                                    <h5 class="main-menu__call-number"><a href="tel:9288006780">+92 ( 8800 ) - 6780</a></h5>
+                                </div>
+                            </div>
+                            <div class="main-menu__search-cart-box">
+                                <div class="main-menu__search-cart-box">
+                                    <div class="main-menu__search-box">
+                                        <a href="#" class="main-menu__search searcher-toggler-box fal fa-search"></a>
+                                    </div>
+                                    <div class="main-menu__cart-box">
+                                        <a href="cart.html" class="main-menu__cart">
+                                            <span class="fal fa-shopping-cart"></span>
+                                            <span class="main-menu__cart-count">02</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-menu__nav-sidebar-icon">
+                                <a class="navSidebar-button" href="#">
+                                    <span class="icon-dots-menu-one"></span>
+                                    <span class="icon-dots-menu-two"></span>
+                                    <span class="icon-dots-menu-three"></span>
+                                </a>
+                            </div>
+                            <div class="main-menu__btn-box auth-nav-box" id="authNavBox">
+                                <div class="auth-nav-group guest-nav-actions" id="guestNavActions">
+                                    <a class="thm-btn auth-nav-btn auth-nav-btn-login" href="login.html" id="navLoginBtn">
+                                        <span>Login</span>
+                                        <i class="fas fa-sign-in-alt"></i>
+                                    </a>
+                                    <a class="thm-btn auth-nav-btn auth-nav-btn-register" href="register.html" id="navRegisterBtn">
+                                        <span>Register</span>
+                                        <i class="fas fa-user-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="auth-nav-group user-nav-actions" id="userNavActions" style="display: none;">
+                                    <a class="thm-btn auth-nav-btn auth-nav-btn-dashboard" href="dashboard.html" id="navDashboardBtn">
+                                        <i class="fas fa-th-large"></i>
+                                        <span>Dashboard</span>
+                                    </a>
+                                    <button type="button" class="auth-nav-logout-btn" title="Logout" aria-label="Logout">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+<!--Page Header Start-->
+<section class="page-header">
+<div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);">
+</div>
+<div class="shape1 float-bob-y"><img alt="" src="assets/images/shapes/page-header-shape1.png"/></div>
+<div class="shape2 float-bob-y"><img alt="" src="assets/images/shapes/page-header-shape2.png"/></div>
+<div class="container">
+<div class="page-header__inner">
+<h2>Contact Us</h2>
+<div class="thm-breadcrumb__inner">
+<ul class="thm-breadcrumb">
+<li><a href="index.html">Home</a></li>
+<li><span>//</span></li>
+<li>Contact Us</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!--Page Header End-->
+<!--Contact Info Start-->
+<section class="contact-info">
+<div class="container">
+<div class="row">
+<!--Contact Two Single Start-->
+<div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+<div class="contact-info__single">
+<div class="contact-info__icon">
+<span class="icon-call"></span>
+</div>
+<p>Contact Us</p>
+<h5><a href="tel:558270575405">+55 827 057 5405</a></h5>
+<h5><a href="tel:558270575405">+55 827 057 5405</a></h5>
+</div>
+</div>
+<!--Contact Two Single End-->
+<!--Contact Two Single Start-->
+<div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+<div class="contact-info__single">
+<div class="contact-info__icon">
+<span class="icon-envelope"></span>
+</div>
+<p>Mail Us</p>
+<h5><a href="mailto:example@gamil.com">example@gamil.com</a></h5>
+<h5><a href="mailto:example@gamil.com">example@gamil.com</a></h5>
+</div>
+</div>
+<!--Contact Two Single End-->
+<!--Contact Two Single Start-->
+<div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+<div class="contact-info__single">
+<div class="contact-info__icon">
+<span class="fas fa-clock"></span>
+</div>
+<p>Working Hours</p>
+<h5>Wednesday - Sunday</h5>
+<h5>7:00 AM - 5:00 PM</h5>
+</div>
+</div>
+<!--Contact Two Single End-->
+<!--Contact Two Single Start-->
+<div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+<div class="contact-info__single">
+<div class="contact-info__icon">
+<span class="icon-location"></span>
+</div>
+<p>Our Office Location</p>
+<h5>Stackly, Chinna Thirupathi,</h5>
+<h5>Salem, Tamil Nadu</h5>
+</div>
+</div>
+<!--Contact Two Single End-->
+</div>
+</div>
+</section>
+<!--Contact Info End-->
+<!--Contact Page Start-->
+<section class="contact-page">
+<div class="container">
+<div class="contact-page__inner">
+<div class="row">
+<div class="col-xl-6">
+<div class="contact-page__left">
+<iframe allowfullscreen="" class="google-map__one" src="https://maps.google.com/maps?q=Chinna+Thirupathi,+Salem,+Tamil+Nadu&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0; width:100%; height:100%; min-height:480px; border-radius:12px;"></iframe>
+</div>
+</div>
+<div class="col-xl-6">
+<div class="contact-page__right">
+<h3 class="contact-page__form-title">Get A Free Quote</h3>
+<form action="404.html" class="contact-form-validated contact-page__form" method="POST">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="contact-page__input-box">
+<input name="name" placeholder="Your name" required="" type="text" pattern="[A-Za-z\s.'-]+" title="Please enter letters only, no numbers allowed" oninput="this.value = this.value.replace(/[0-9]/g, '');" onkeypress="return !/[0-9]/.test(event.key);"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="contact-page__input-box">
+<input name="email" placeholder="Your Email" required="" type="email"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="contact-page__input-box">
+<input name="phone" placeholder="Phone" required="" type="text" inputmode="tel" pattern="[0-9+\s()-]+" title="Please enter numbers only, no letters allowed" oninput="this.value = this.value.replace(/[a-zA-Z]/g, '');" onkeypress="return !/[a-zA-Z]/.test(event.key);"/>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="contact-page__input-box">
+<input name="subject" placeholder="Subject" required="" type="text"/>
+</div>
+</div>
+<div class="col-xl-12">
+<div class="contact-page__input-box text-message-box">
+<textarea name="message" placeholder="Messege" required=""></textarea>
+</div>
+<div class="contact-page__btn-box">
+<button class="thm-btn" onclick="window.location.href='404.html'; return false;" type="submit">
+                                                    Send A Message
+                                                    <span class="fas fa-arrow-right"></span>
+</button>
+</div>
+</div>
+</div>
+<div class="result"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--Contact Page End-->
+<!-- 5 Regional Skin Centers & 5 Direct Channels Start -->
+<section style="padding: 90px 0; background: #ffffff;">
+<div class="container">
+<div class="section-title text-center sec-title-animation animation-style1">
+<div class="section-title__tagline-box">
+<p class="section-title__tagline">Global Presence</p>
+<div class="section-title__tagline-shape"></div>
+</div>
+<h2 class="section-title__title title-animation">5 Regional Skin Centers &amp; Flagships</h2>
+<p style="max-width: 650px; margin: 15px auto 0; color: var(--pureglow-gray);">Visit our walk-in clinical boutique suites for private consultations and product discovery.</p>
+</div>
+<div class="row gutter-y-30" style="margin-top: 40px;">
+<div class="col-xl-4 col-lg-4 col-md-6">
+<div class="stackly-card">
+<span class="stackly-badge">Flagship</span>
+<h3 class="stackly-card__title">New York Madison Ave</h3>
+<p class="stackly-card__text" style="margin-bottom: 12px;"><i class="far fa-map-marker-alt" style="color: var(--pureglow-base);"></i> 720 Madison Ave, New York, NY 10065</p>
+<p class="stackly-card__text"><i class="far fa-phone" style="color: var(--pureglow-base);"></i> (212) 555-0192</p>
+<p class="stackly-card__text"><i class="far fa-clock" style="color: var(--pureglow-base);"></i> Mon-Sat: 09:00 - 19:00</p>
+</div>
+</div>
+<div class="col-xl-4 col-lg-4 col-md-6">
+<div class="stackly-card">
+<span class="stackly-badge">West Coast</span>
+<h3 class="stackly-card__title">Los Angeles Beverly Hills</h3>
+<p class="stackly-card__text" style="margin-bottom: 12px;"><i class="far fa-map-marker-alt" style="color: var(--pureglow-base);"></i> 9440 Wilshire Blvd, Beverly Hills, CA 90212</p>
+<p class="stackly-card__text"><i class="far fa-phone" style="color: var(--pureglow-base);"></i> (310) 555-0844</p>
+<p class="stackly-card__text"><i class="far fa-clock" style="color: var(--pureglow-base);"></i> Mon-Sat: 10:00 - 20:00</p>
+</div>
+</div>
+<div class="col-xl-4 col-lg-4 col-md-6">
+<div class="stackly-card">
+<span class="stackly-badge">Midwest</span>
+<h3 class="stackly-card__title">Chicago Michigan Ave</h3>
+<p class="stackly-card__text" style="margin-bottom: 12px;"><i class="far fa-map-marker-alt" style="color: var(--pureglow-base);"></i> 600 N Michigan Ave, Chicago, IL 60611</p>
+<p class="stackly-card__text"><i class="far fa-phone" style="color: var(--pureglow-base);"></i> (312) 555-0371</p>
+<p class="stackly-card__text"><i class="far fa-clock" style="color: var(--pureglow-base);"></i> Mon-Sat: 09:00 - 18:00</p>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="stackly-card">
+<span class="stackly-badge stackly-badge--mint">South Florida</span>
+<h3 class="stackly-card__title">Miami Brickell Skin Lounge</h3>
+<p class="stackly-card__text" style="margin-bottom: 12px;"><i class="far fa-map-marker-alt" style="color: var(--pureglow-base);"></i> 1100 Brickell Bay Dr, Miami, FL 33131</p>
+<p class="stackly-card__text"><i class="far fa-phone" style="color: var(--pureglow-base);"></i> (305) 555-0155</p>
+<p class="stackly-card__text"><i class="far fa-clock" style="color: var(--pureglow-base);"></i> Tue-Sun: 10:00 - 20:00</p>
+</div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6">
+<div class="stackly-card">
+<span class="stackly-badge stackly-badge--mint">Bay Area</span>
+<h3 class="stackly-card__title">San Francisco Aesthetic Lab</h3>
+<p class="stackly-card__text" style="margin-bottom: 12px;"><i class="far fa-map-marker-alt" style="color: var(--pureglow-base);"></i> 350 Post St, San Francisco, CA 94108</p>
+<p class="stackly-card__text"><i class="far fa-phone" style="color: var(--pureglow-base);"></i> (415) 555-0923</p>
+<p class="stackly-card__text"><i class="far fa-clock" style="color: var(--pureglow-base);"></i> Mon-Sat: 09:00 - 18:00</p>
+</div>
+</div>
+</div>
+<!-- 5 Direct Support Channels -->
+<div class="section-title text-center sec-title-animation animation-style1" style="margin-top: 80px;">
+<h2 class="section-title__title title-animation">5 Direct Support Channels</h2>
+</div>
+<div class="row gutter-y-30" style="margin-top: 30px;">
+<div class="col">
+<div class="stackly-stat-card">
+<i class="fal fa-comment-dots" style="font-size: 32px; color: var(--pureglow-base); margin-bottom: 10px;"></i>
+<div class="stackly-stat-card__label">WhatsApp VIP</div>
+<p class="stackly-stat-card__sub">+1 (246) 333-099</p>
+</div>
+</div>
+<div class="col">
+<div class="stackly-stat-card">
+<i class="fal fa-video" style="font-size: 32px; color: var(--pureglow-base); margin-bottom: 10px;"></i>
+<div class="stackly-stat-card__label">Virtual Consult</div>
+<p class="stackly-stat-card__sub">Zoom HD Desk</p>
+</div>
+</div>
+<div class="col">
+<div class="stackly-stat-card">
+<i class="fal fa-envelope-open-text" style="font-size: 32px; color: var(--pureglow-base); margin-bottom: 10px;"></i>
+<div class="stackly-stat-card__label">Email Support</div>
+<p class="stackly-stat-card__sub">info@stackly.com</p>
+</div>
+</div>
+<div class="col">
+<div class="stackly-stat-card">
+<i class="fal fa-phone-office" style="font-size: 32px; color: var(--pureglow-base); margin-bottom: 10px;"></i>
+<div class="stackly-stat-card__label">Direct Line</div>
+<p class="stackly-stat-card__sub">+92 (8800) 6780</p>
+</div>
+</div>
+<div class="col">
+<div class="stackly-stat-card">
+<i class="fal fa-box-check" style="font-size: 32px; color: var(--pureglow-base); margin-bottom: 10px;"></i>
+<div class="stackly-stat-card__label">Orders &amp; Returns</div>
+<p class="stackly-stat-card__sub">orders@stackly.com</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5 Regional Skin Centers & 5 Direct Channels End -->
+<!-- First-Time Client Checklist & FAQ Start -->
+<section style="padding: 90px 0; background: var(--pureglow-primary);">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-xl-6 col-lg-6">
+<span class="stackly-badge">Client Preparation</span>
+<h2 style="font-family: var(--pureglow-font-two); font-size: 32px; color: var(--pureglow-black); margin-top: 10px;">Pre-Appointment Checklist</h2>
+<p style="color: var(--pureglow-gray); margin-top: 12px;">Ensure optimal clinical outcomes by following these 5 quick prep guidelines before your facial procedure:</p>
+<ul style="list-style: none; padding: 0; margin-top: 25px;">
+<li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+<i class="fas fa-check-circle" style="color: var(--pureglow-accent, #36B89E); font-size: 18px; margin-top: 4px;"></i>
+<span style="color: var(--pureglow-black); font-size: 15px;"><strong>Discontinue Retinoids:</strong> Avoid prescription tretinoin or active retinols 48 hours prior to treatment.</span>
+</li>
+<li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+<i class="fas fa-check-circle" style="color: var(--pureglow-accent, #36B89E); font-size: 18px; margin-top: 4px;"></i>
+<span style="color: var(--pureglow-black); font-size: 15px;"><strong>Avoid Direct UV:</strong> Do not sunbathe or expose skin to harsh tanning rays for 3 days before visits.</span>
+</li>
+<li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+<i class="fas fa-check-circle" style="color: var(--pureglow-accent, #36B89E); font-size: 18px; margin-top: 4px;"></i>
+<span style="color: var(--pureglow-black); font-size: 15px;"><strong>Stay Hydrated:</strong> Drink plenty of water to assist cellular conductivity during ultrasonic prep.</span>
+</li>
+<li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+<i class="fas fa-check-circle" style="color: var(--pureglow-accent, #36B89E); font-size: 18px; margin-top: 4px;"></i>
+<span style="color: var(--pureglow-black); font-size: 15px;"><strong>Arrive Bare-Faced:</strong> If convenient, arrive with minimal makeup so your diagnostic scan is instantaneous.</span>
+</li>
+<li style="margin-bottom: 15px; display: flex; align-items: flex-start; gap: 12px;">
+<i class="fas fa-check-circle" style="color: var(--pureglow-accent, #36B89E); font-size: 18px; margin-top: 4px;"></i>
+<span style="color: var(--pureglow-black); font-size: 15px;"><strong>Bring Current Routine:</strong> Mention your current serums so we identify potential ingredient clashes.</span>
+</li>
+</ul>
+</div>
+<div class="col-xl-6 col-lg-6 mt-4 mt-lg-0">
+<div class="stackly-card" style="padding: 40px;">
+<span class="stackly-badge stackly-badge--mint">Quick Answers</span>
+<h3 class="stackly-card__title">Booking FAQs</h3>
+<div style="margin-top: 20px;">
+<div style="margin-bottom: 18px; border-bottom: 1px solid rgba(35, 78, 112, 0.08); padding-bottom: 12px;">
+<h5 style="font-size: 16px; color: var(--pureglow-black); margin-bottom: 5px;"><i class="far fa-question-circle" style="color: var(--pureglow-base);"></i> How early should I arrive?</h5>
+<p style="font-size: 14px; color: var(--pureglow-gray); margin: 0;">We recommend arriving 10 minutes prior for your complimentary botanical tea and diagnostic check-in.</p>
+</div>
+<div style="margin-bottom: 18px; border-bottom: 1px solid rgba(35, 78, 112, 0.08); padding-bottom: 12px;">
+<h5 style="font-size: 16px; color: var(--pureglow-black); margin-bottom: 5px;"><i class="far fa-question-circle" style="color: var(--pureglow-base);"></i> What is the cancellation policy?</h5>
+<p style="font-size: 14px; color: var(--pureglow-gray); margin: 0;">Appointments can be rescheduled or cancelled with full refund up to 24 hours in advance.</p>
+</div>
+<div style="margin-bottom: 18px; border-bottom: 1px solid rgba(35, 78, 112, 0.08); padding-bottom: 12px;">
+<h5 style="font-size: 16px; color: var(--pureglow-black); margin-bottom: 5px;"><i class="far fa-question-circle" style="color: var(--pureglow-base);"></i> Are consultations included?</h5>
+<p style="font-size: 14px; color: var(--pureglow-gray); margin: 0;">Yes, an in-depth 3D optical skin scan and esthetician consult are built into every treatment session.</p>
+</div>
+<div>
+<h5 style="font-size: 16px; color: var(--pureglow-black); margin-bottom: 5px;"><i class="far fa-question-circle" style="color: var(--pureglow-base);"></i> Can I buy products on site?</h5>
+<p style="font-size: 14px; color: var(--pureglow-gray); margin: 0;">All bespoke compounded formulas and clinical retail items are available at our checkout lounge.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- First-Time Client Checklist & FAQ End -->
+<!--Site Footer Start-->
+<footer class="site-footer">
+            <div class="site-footer__top">
+                <div class="container">
+                    <div class="site-footer__top-inner">
+                        <div class="row">
+                            <div class="col-xl-4 wow fadeInUp" data-wow-delay="100ms">
+                                <div class="footer-widget__about">
+                                    <div class="footer-widget__about-logo"><a href="index.html"><img src="images/logo-stackly.png" alt="Stackly" style="max-height: 32px; width: auto; filter: brightness(0) invert(1);"></a></div>
+                                    <p class="footer-widget__about-text">We provide a range of professional skincare
+                                        <br> treatments designed to improve your skinâ€™s <br> health and natural beauty.
+                                    </p>
+                                    <div class="footer-widget__newsletter-form-box">
+                                        <form class="footer-widget__newsletter-form" action="404.html" method="POST" onsubmit="window.location.href='404.html'; return false;" novalidate="novalidate">
+                                            <div class="footer-widget__newsletter-form-input-box">
+                                                <input type="email" placeholder="Your Email address" name="email">
+                                            </div>
+                                            <button type="submit" class="footer-widget__newsletter-btn" onclick="window.location.href='404.html'; return false;" aria-label="Send">
+                                                <span><i class="icon-paper-plane"></i></span>
+                                            </button>
+                                            <div class="result"></div>
+                                        </form>
+                                    </div>
+                                    <div class="footer-widget__social">
+                                        <a href="404.html" title="Facebook"><span class="fab fa-facebook-f"></span></a>
+                                        <a href="404.html" title="Twitter"><span class="fab fa-twitter"></span></a>
+                                        <a href="404.html" title="Instagram"><span class="fab fa-instagram"></span></a>
+                                        <a href="404.html" title="Pinterest"><span class="fab fa-pinterest-p"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-8">
+                                <div class="site-footer__top-right">
+                                    <div class="site-footer__top-right-top">
+                                        <div class="site-footer__contact-info">
+                                            <ul class="site-footer__contact-info-list">
+                                                <li>
+                                                    <div class="icon-box">
+                                                        <span class="icon-telephone"></span>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h3>Urgent Support?</h3>
+                                                        <p>+1 (246) 333-099</p>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="icon-box">
+                                                        <span class="icon-email"></span>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h3>Send us a Mail</h3>
+                                                        <p>info@domain.com</p>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <div class="icon-box">
+                                                        <span class="icon-clock"></span>
+                                                    </div>
+                                                    <div class="content-box">
+                                                        <h3>Opening Time</h3>
+                                                        <p>Mon -Sat: 10:00 - 17:00</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                                            <div class="footer-widget__links">
+                                                <h4 class="footer-widget__title">Quick links</h4>
+                                                <ul class="footer-widget__links-list list-unstyled">
+                                                    <li><span class="icon-chevron"></span><a href="index.html">Home</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="about.html">About
+                                                            Us</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="services.html">Our
+                                                            Services</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="products.html">Products</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="blog.html">Latest
+                                                            Blog</a></li>
+                                                    <li><span class="icon-chevron"></span><a href="contact.html">Contact
+                                                            Us</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                                            <div class="footer-widget__links services">
+                                                <h4 class="footer-widget__title">Our Services</h4>
+                                                <ul class="footer-widget__links-list list-unstyled">
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Facial
+                                                            Treatment</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Skin
+                                                            Hydration </a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a href="services.html">Our
+                                                            Services</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Anti-Aging
+                                                            Care</a>
+                                                    </li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Acne
+                                                            Treatment</a></li>
+                                                    <li><span class="icon-chevron"></span><a
+                                                            href="facial-treatment.html">Skin
+                                                            Rejuvenation</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                                            <div class="footer-widget__recent-posts">
+                                                <h3 class="footer-widget__title">Recent Posts</h3>
+                                                <ul class="footer-widget__recent-posts-list">
+                                                    <li>
+                                                        <div class="footer-widget__recent-posts-content">
+                                                            <p><span class="icon-calendar"></span> 10 Jan,2026</p>
+                                                            <h4><a href="404.html">Natural Skincare Tips <br>
+                                                                    for a Radiant Glow</a></h4>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="footer-widget__recent-posts-content">
+                                                            <p><span class="icon-calendar"></span> 10 Jan,2026</p>
+                                                            <h4><a href="404.html">Easy Skincare Routines <br>
+                                                                    for Busy Lifestyles</a></h4>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <div class="site-footer__copyright">
+                                    <p class="site-footer__copyright-text">Â© 2026 <a href="index.html">Stackly</a>. All
+                                        Rights Reserved.</p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer End-->
+
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box"><a href="index.html" aria-label="logo image"><img src="images/logo-stackly.png" width="150" alt="Stackly" style="max-height: 48px; width: auto;"></a></div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:needhelp@packageName__.com">needhelp@stackly.com</a>
+                </li>
+                <li>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:666-888-0000">666 888 0000</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__top">
+                <div class="mobile-nav__social">
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-facebook-square"></a>
+                    <a href="#" class="fab fa-pinterest-p"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                </div><!-- /.mobile-nav__social -->
+            </div><!-- /.mobile-nav__top -->
+
+
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <!-- Search Popup -->
+    <div class="search-popup">
+        <div class="color-layer"></div>
+        <button class="close-search"><span class="far fa-times fa-fw"></span></button>
+        <form method="post" action="blog.html">
+            <div class="form-group">
+                <input type="search" name="search-field" value="" placeholder="Search Here" required="">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+    <!-- End Search Popup -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+        <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
+        <span class="scroll-to-top__text"> Go Back Top</span>
+    </a>
+    <!-- All Bundled JS -->
+    <script src="js/script.js?v=2.4"></script>
+    <script src="js/auth.js?v=2.4"></script>
+</body>
+
+</html>

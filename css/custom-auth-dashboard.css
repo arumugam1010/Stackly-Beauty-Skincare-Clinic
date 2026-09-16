@@ -3207,6 +3207,21 @@ textarea.dash-control-input {
   display: none !important;
 }
 
+/* Mobile Navigation Sidebar Drawer - Sleek Compact Logo */
+.mobile-nav__content .logo-box {
+  margin-bottom: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.mobile-nav__content .logo-box a img {
+  max-height: 32px !important;
+  width: auto !important;
+  max-width: 120px !important;
+  object-fit: contain !important;
+  transition: opacity 0.2s ease !important;
+}
+
 
 
 

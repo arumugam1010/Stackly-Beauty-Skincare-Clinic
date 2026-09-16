@@ -132,6 +132,22 @@
     const user = getCurrentUser();
     const guestBoxes = document.querySelectorAll('.guest-nav-actions');
     const userBoxes = document.querySelectorAll('.user-nav-actions');
+
+    // Automatically guarantee .mobile-nav-auth-links container exists in every mobile nav drawer
+    document.querySelectorAll('.mobile-nav__content').forEach(drawer => {
+      let container = drawer.querySelector('.mobile-nav-auth-links');
+      if (!container) {
+        container = document.createElement('div');
+        container.className = 'mobile-nav-auth-links';
+        const contactList = drawer.querySelector('.mobile-nav__contact');
+        if (contactList) {
+          drawer.insertBefore(container, contactList);
+        } else {
+          drawer.appendChild(container);
+        }
+      }
+    });
+
     const mobileAuthContainers = document.querySelectorAll('.mobile-nav-auth-links');
 
     if (user) {

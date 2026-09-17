@@ -116,14 +116,22 @@
     return re.test(String(email).trim());
   }
 
-  // Password validation: Minimum 6 characters
+  // Password validation: Combination of alphabets, digits, and symbols (minimum 6 characters)
   function validatePassword(password) {
     const pwd = password || '';
     const lengthValid = pwd.length >= 6;
+    const hasAlphabet = /[a-zA-Z]/.test(pwd);
+    const hasDigit = /[0-9]/.test(pwd);
+    const hasSymbol = /[^a-zA-Z0-9\s]/.test(pwd);
+    const isValid = lengthValid && hasAlphabet && hasDigit && hasSymbol;
 
     return {
       lengthValid,
-      isValid: lengthValid
+      hasAlphabet,
+      hasDigit,
+      hasSymbol,
+      isValid,
+      score: (lengthValid ? 1 : 0) + (hasAlphabet ? 1 : 0) + (hasDigit ? 1 : 0) + (hasSymbol ? 1 : 0)
     };
   }
 

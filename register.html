@@ -14,7 +14,7 @@
     <!-- Bundled CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Custom Auth & Dashboard CSS -->
-    <link rel="stylesheet" href="css/custom-auth-dashboard.css?v=2.6">
+    <link rel="stylesheet" href="css/custom-auth-dashboard.css?v=3.2">
 </head>
 
 <body class="auth-page-body">
@@ -88,13 +88,13 @@
                 <label class="auth-label" for="regPassword">Password</label>
                 <div class="auth-input-wrapper">
                     <i class="fas fa-lock auth-input-icon"></i>
-                    <input type="password" id="regPassword" class="auth-input" placeholder="Create a strong password" required autocomplete="new-password">
+                    <input type="password" id="regPassword" class="auth-input" placeholder="Create your password" required autocomplete="new-password">
                     <button type="button" class="auth-password-toggle" id="regPwdToggleBtn" aria-label="Toggle password visibility">
                         <i class="fas fa-eye" id="regPwdToggleIcon"></i>
                     </button>
                 </div>
                 <div class="auth-error-msg" id="regPasswordErrorMsg">
-                    <i class="fas fa-exclamation-circle"></i> Please enter a password (minimum 6 characters).
+                    <i class="fas fa-exclamation-circle"></i> Password must contain a combination of alphabets, digits, and symbols (minimum 6 characters).
                 </div>
             </div>
 
@@ -131,7 +131,7 @@
     </div>
 
     <!-- Auth Scripts -->
-    <script src="js/auth.js?v=2.4"></script>
+    <script src="js/auth.js?v=2.5"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const nameInput = document.getElementById('regName');
@@ -200,25 +200,89 @@
                 confirmPwdToggleIcon.className = isPassword ? 'fas fa-eye-slash' : 'fas fa-eye';
             });
 
-            // Password Validation feedback
-            function evaluatePassword() {
+            // Password Validation feedback with combination of alphabets, digits & symbols
+            function evaluatePassword(showErrorsOnFail = false) {
                 const val = passwordInput.value;
-                const isValid = val.length >= 6;
+                const validation = window.StacklyAuth ? window.StacklyAuth.validatePassword(val) : {
+                    lengthValid: val.length >= 6,
+                    hasAlphabet: /[a-zA-Z]/.test(val),
+                    hasDigit: /[0-9]/.test(val),
+                    hasSymbol: /[^a-zA-Z0-9\s]/.test(val),
+                    isValid: (val.length >= 6) && /[a-zA-Z]/.test(val) && /[0-9]/.test(val) && /[^a-zA-Z0-9\s]/.test(val),
+                    score: ((val.length >= 6) ? 1 : 0) + (/[a-zA-Z]/.test(val) ? 1 : 0) + (/[0-9]/.test(val) ? 1 : 0) + (/[^a-zA-Z0-9\s]/.test(val) ? 1 : 0)
+                };
 
-                if (val.length > 0) {
-                    if (isValid) {
-                        passwordInput.classList.remove('is-invalid');
-                        passwordInput.classList.add('is-valid');
-                        passwordErrorMsg.style.display = 'none';
+                const ruleAlphabet = document.getElementById('ruleAlphabet');
+                const ruleDigit = document.getElementById('ruleDigit');
+                const ruleSymbol = document.getElementById('ruleSymbol');
+                const ruleLength = document.getElementById('ruleLength');
+                const pwdMeterFill = document.getElementById('pwdMeterFill');
+                const pwdStrengthText = document.getElementById('pwdStrengthText');
+
+                function updateRule(el, met) {
+                    if (!el) return;
+                    const icon = el.querySelector('i');
+                    if (met) {
+                        el.classList.add('met');
+                        el.classList.remove('failed');
+                        if (icon) icon.className = 'fas fa-check-circle';
                     } else {
-                        passwordInput.classList.remove('is-valid');
+                        el.classList.remove('met');
+                        if (showErrorsOnFail && val.length > 0) {
+                            el.classList.add('failed');
+                        } else {
+                            el.classList.remove('failed');
+                        }
+                        if (icon) icon.className = 'fas fa-circle';
                     }
-                } else {
-                    passwordInput.classList.remove('is-valid', 'is-invalid');
-                    passwordErrorMsg.style.display = 'none';
                 }
 
-                return isValid;
+                updateRule(ruleAlphabet, validation.hasAlphabet);
+                updateRule(ruleDigit, validation.hasDigit);
+                updateRule(ruleSymbol, validation.hasSymbol);
+                updateRule(ruleLength, validation.lengthValid);
+
+                if (val.length === 0) {
+                    if (pwdMeterFill) {
+                        pwdMeterFill.style.width = '0%';
+                        pwdMeterFill.style.backgroundColor = '#cbd5e1';
+                    }
+                    if (pwdStrengthText) {
+                        pwdStrengthText.textContent = 'Empty';
+                        pwdStrengthText.style.color = '#64748b';
+                    }
+                    passwordInput.classList.remove('is-valid', 'is-invalid');
+                    passwordErrorMsg.style.display = 'none';
+                } else if (validation.isValid) {
+                    if (pwdMeterFill) {
+                        pwdMeterFill.style.width = '100%';
+                        pwdMeterFill.style.backgroundColor = '#36B89E';
+                    }
+                    if (pwdStrengthText) {
+                        pwdStrengthText.textContent = 'Strong & Secure';
+                        pwdStrengthText.style.color = '#36B89E';
+                    }
+                    passwordInput.classList.remove('is-invalid');
+                    passwordInput.classList.add('is-valid');
+                    passwordErrorMsg.style.display = 'none';
+                } else {
+                    const score = validation.score || 1;
+                    if (pwdMeterFill) {
+                        pwdMeterFill.style.width = (score * 25) + '%';
+                        pwdMeterFill.style.backgroundColor = score <= 1 ? '#ef4444' : score === 2 ? '#f59e0b' : '#3b82f6';
+                    }
+                    if (pwdStrengthText) {
+                        pwdStrengthText.textContent = score <= 1 ? 'Weak' : score === 2 ? 'Fair' : 'Good (missing rules)';
+                        pwdStrengthText.style.color = score <= 1 ? '#ef4444' : score === 2 ? '#f59e0b' : '#3b82f6';
+                    }
+                    passwordInput.classList.remove('is-valid');
+                    if (showErrorsOnFail) {
+                        passwordInput.classList.add('is-invalid');
+                        passwordErrorMsg.style.display = 'flex';
+                    }
+                }
+
+                return validation.isValid;
             }
 
             passwordInput.addEventListener('input', function() {
@@ -271,7 +335,7 @@
                 const password = passwordInput.value;
                 const isNameValid = evaluateName();
                 const isEmailValid = StacklyAuth.validateEmail(email);
-                const isPasswordValid = evaluatePassword();
+                const isPasswordValid = evaluatePassword(true);
                 const isMatch = password === confirmInput.value;
 
                 let hasError = false;

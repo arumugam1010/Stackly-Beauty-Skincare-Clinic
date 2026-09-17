@@ -14,7 +14,7 @@
     <!-- Bundled CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Custom Auth & Dashboard CSS -->
-    <link rel="stylesheet" href="css/custom-auth-dashboard.css?v=2.6">
+    <link rel="stylesheet" href="css/custom-auth-dashboard.css?v=3.2">
 </head>
 
 <body class="auth-page-body">
@@ -79,16 +79,18 @@
 
             <!-- Password Input -->
             <div class="auth-form-group">
-                <label class="auth-label" for="loginPassword">Password</label>
+                <div class="auth-label-row">
+                    <label class="auth-label" for="loginPassword">Password</label>
+                </div>
                 <div class="auth-input-wrapper">
                     <i class="fas fa-lock auth-input-icon"></i>
-                    <input type="password" id="loginPassword" class="auth-input" placeholder="Enter your secure password" required autocomplete="current-password">
+                    <input type="password" id="loginPassword" class="auth-input" placeholder="Enter your password" required autocomplete="current-password">
                     <button type="button" class="auth-password-toggle" id="pwdToggleBtn" aria-label="Toggle password visibility">
                         <i class="fas fa-eye" id="pwdToggleIcon"></i>
                     </button>
                 </div>
                 <div class="auth-error-msg" id="passwordErrorMsg">
-                    <i class="fas fa-exclamation-circle"></i> Please enter your password.
+                    <i class="fas fa-exclamation-circle"></i> Please enter your password (alphabets, digits & symbols).
                 </div>
             </div>
 
@@ -110,7 +112,7 @@
     </div>
 
     <!-- Auth Scripts -->
-    <script src="js/auth.js?v=2.4"></script>
+    <script src="js/auth.js?v=2.5"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const emailInput = document.getElementById('loginEmail');
@@ -128,25 +130,52 @@
                 pwdToggleIcon.className = isPassword ? 'fas fa-eye-slash' : 'fas fa-eye';
             });
 
-            // Password Validation feedback
-            function evaluatePassword() {
+            // Password Validation feedback (checks combination of alphabets, digits & symbols)
+            function evaluatePassword(showErrorsOnFail = false) {
                 const val = passwordInput.value;
-                const isValid = val.trim().length > 0;
+                if (!val || val.trim().length === 0) {
+                    passwordInput.classList.remove('is-valid');
+                    if (showErrorsOnFail) {
+                        passwordInput.classList.add('is-invalid');
+                        passwordErrorMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Please enter your password.';
+                        passwordErrorMsg.style.display = 'flex';
+                    }
+                    return false;
+                }
 
-                if (isValid) {
+                const res = window.StacklyAuth ? window.StacklyAuth.validatePassword(val) : {
+                    isValid: (val.length >= 6) && /[a-zA-Z]/.test(val) && /[0-9]/.test(val) && /[^a-zA-Z0-9\s]/.test(val)
+                };
+
+                if (res.isValid) {
                     passwordInput.classList.remove('is-invalid');
                     passwordInput.classList.add('is-valid');
                     passwordErrorMsg.style.display = 'none';
+                    return true;
                 } else {
                     passwordInput.classList.remove('is-valid');
+                    if (showErrorsOnFail) {
+                        passwordInput.classList.add('is-invalid');
+                        passwordErrorMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Password must contain alphabets, digits, and symbols (minimum 6 characters).';
+                        passwordErrorMsg.style.display = 'flex';
+                    }
+                    return false;
                 }
-
-                return isValid;
             }
 
             passwordInput.addEventListener('input', function () {
-                if (passwordInput.value.length > 0) {
-                    passwordInput.classList.remove('is-invalid');
+                const val = passwordInput.value;
+                if (val.length > 0) {
+                    const res = window.StacklyAuth ? window.StacklyAuth.validatePassword(val) : null;
+                    if (res && res.isValid) {
+                        passwordInput.classList.remove('is-invalid');
+                        passwordInput.classList.add('is-valid');
+                        passwordErrorMsg.style.display = 'none';
+                    } else {
+                        passwordInput.classList.remove('is-valid');
+                    }
+                } else {
+                    passwordInput.classList.remove('is-valid', 'is-invalid');
                     passwordErrorMsg.style.display = 'none';
                 }
             });
@@ -197,7 +226,7 @@
                 const email = emailInput.value.trim();
                 const password = passwordInput.value;
                 const isEmailValid = StacklyAuth.validateEmail(email);
-                const isPasswordValid = evaluatePassword();
+                const isPasswordValid = evaluatePassword(true);
 
                 let hasError = false;
 
@@ -211,12 +240,10 @@
                 }
 
                 if (!isPasswordValid) {
-                    passwordInput.classList.add('is-invalid');
-                    passwordErrorMsg.style.display = 'flex';
                     hasError = true;
-                } else {
-                    passwordInput.classList.remove('is-invalid');
-                    passwordErrorMsg.style.display = 'none';
+                    if (isEmailValid) {
+                        passwordInput.focus();
+                    }
                 }
 
                 if (hasError) {

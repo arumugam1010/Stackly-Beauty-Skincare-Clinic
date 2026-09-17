@@ -23268,6 +23268,9 @@ jQuery,
                 .slideUp();
               $(this).parent().addClass("active");
               $(this).parent().find(".accrodion-content").slideDown();
+            } else {
+              $(this).parent().removeClass("active");
+              $(this).parent().find(".accrodion-content").slideUp();
             }
           });
       });
